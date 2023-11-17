@@ -13,15 +13,8 @@ int main(void)
 
     for (int r = 0; r < h; r++)
     {
-        for ( int s = 0; s < h; s++)
-        {
+        for ( int j = 0; j <= h -1; j++)
            printf("#");
-         printf("\n");
-        }
-       // for (int ha = h - s + 1; ha < h; ha ++)
-      //  {
-
-    //  }
-
+        printf("\n");
     }
 }
