@@ -10,15 +10,15 @@ int main(void)
         height = get_int("how tall is your pyramid? \n");
         ;
     }
-    while ( heigth >= 1 && height <= 8);
+    while ( height >= 1 && height <= 8);
     for (int rows = 0; rows < height; rows ++)
     {
         int space, hashes;
-        for ( spaces = rows -1; spaces < height; spaces ++)
+        for ( space = rows -1; space < height; space ++)
         {
             printf(" ");
         }
-        for (hashes = height - spaces + 1; hashes < height; hashes ++)
+        for (hashes = height - space + 1; hashes < height; hashes ++)
         {
             printf("#");
         }
