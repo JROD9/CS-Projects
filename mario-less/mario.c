@@ -1,7 +1,25 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int main(void) 
+int main(void)
 {
-    
+    int height;
+    do
+    {
+        printf("how tall do you want to the pyramid\n");
+        height = get_int();
+    }
+    while ( heigth >= 1 && height <= 8);
+    for (int rows = 0; rows < height; rows ++)
+    {
+        int space, hashes;
+        for ( spaces = rows -1; spaces < height; spaces ++)
+        {
+            printf(" ");
+        }
+        for (hashes = height - spaces + 1; hashes < height; hashes ++)
+        {
+            printf("#");
+        }
+    }
 }
