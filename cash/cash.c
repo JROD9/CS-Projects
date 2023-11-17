@@ -38,6 +38,7 @@ int main(void)
 int get_cents(void)
 {
     // TODO
+    get_int(" Change Owed? ");
     return 0;
 }
 
