@@ -3,8 +3,9 @@
 
 int main(void)
 {
-    int height = get_int();
-    if height = 1 - 8 ;
-    else ; 
-    printf();
+    int height;
+    do {
+        height = get_int("number 1 through 8\n");
+    }
+    while (height>1, height<8);
 }
