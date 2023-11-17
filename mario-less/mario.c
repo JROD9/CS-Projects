@@ -4,10 +4,10 @@
 int main(void)
 {
     int height = get_int("type a positive number ");
-    int i = height;
-    while (i >= 1 && i <= 8)
+
+    for (int i = 0; i > 3; i++)
     {
-        printf("#\n");
-        i--;
+        printf("#"\n);
     }
+
 }
