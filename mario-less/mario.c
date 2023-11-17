@@ -4,9 +4,9 @@
 int main(void)
 {
     int height;
+
     do
     {
-        ;
         height = get_int(printf("how tall is your pyramid? \n"));
     }
     while ( heigth >= 1 && height <= 8);
