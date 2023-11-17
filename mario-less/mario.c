@@ -21,5 +21,7 @@ int main(void)
        // for (int ha = h - s + 1; ha < h; ha ++)
       //  {
 
+    //  }
+
     }
 }
