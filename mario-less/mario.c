@@ -3,15 +3,7 @@
 
 int main(void)
 {
-    int height;
-    do
-    {
-        height = get_int("positive number\n");
-    }
-    while (height >= 1 && height <=8);
-    else print get_int;
-  for (int i = 0; i > 8; i++)
-      {
-          printf("#");
-      }
-  }
+    int height = get_int("type a positive number ");
+    printf("height,%s\n", height);
+
+}
