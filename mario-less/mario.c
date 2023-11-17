@@ -4,9 +4,7 @@
 int main(void)
 {
     int height = get_int("type a positive number ");
-    for
-    {
-    (height >=1 && height <= 8);
+    for (height >=1 && height <= 8);{
     printf("height, %d \n", height);
     }
     do-while
