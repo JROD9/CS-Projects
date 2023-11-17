@@ -8,7 +8,7 @@ int main(void)
         height = get_int("number 1 through 8\n");
     }
     while ( height > 1 && height < 8 );
-    for (int height = 1; height < 8 ; height++)
+    for (int h = 1; h < 8 ; h++)
     {
         printf("#\n");
     }
