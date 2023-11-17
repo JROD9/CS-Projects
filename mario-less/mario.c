@@ -9,13 +9,13 @@ int main(void)
     {
         h = get_int("Height: \n");
     }
-    while ( h < 1 || h > 8);
+    while (h < 1 || h > 8);
 
     for (int r = 0; r < h; r++)
     {
-        for ( int j = 0; j <= h -1; j++)
+        for (int j = 0; j <= h - 1; j++)
         {
-            if ( r + j < h - 1)
+            if (r + j < h - 1)
                 printf(" ");
             else
                 printf("#");
