@@ -38,7 +38,7 @@ int main(void)
 int get_cents(void)
 {
     // TODO
-    ;
+    get_cents("number of cents? \n");
 }
 
 int calculate_quarters(int cents)
