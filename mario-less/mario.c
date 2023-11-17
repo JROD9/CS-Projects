@@ -7,7 +7,8 @@ int main(void)
 
     do
     {
-        height = get_int(printf("how tall is your pyramid? \n"));
+        height = get_int("how tall is your pyramid? \n");
+        ;
     }
     while ( heigth >= 1 && height <= 8);
     for (int rows = 0; rows < height; rows ++)
