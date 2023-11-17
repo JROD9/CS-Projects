@@ -13,11 +13,11 @@ int main(void)
 
     for (int rows = 0; rows < height; rows ++)
     {
-        //int space, hashes;
-      //  for ( space = rows -1; space < height; space ++)
-       // {
-       //     printf(" ");
-       // }
+        int space, hashes;
+        for ( space = rows -1; space < height; space ++)
+        {
+           printf(" ");
+        }
        // for (hashes = height - space + 1; hashes < height; hashes ++)
       //  {
             printf("#");
