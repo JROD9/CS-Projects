@@ -3,9 +3,8 @@
 
 int main(void)
 {
-    int height = get_int("type a positive number ");
 
-    for (int i = 0; i > 3; i++)
+    for (int i = 0; i >= 1 && i <=8; i++)
     {
         printf("#"\n);
     }
