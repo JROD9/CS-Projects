@@ -7,5 +7,6 @@ int main(void)
     if (height >=1 && height <= 8){
     printf("height, %d \n", height);
     }
+    else get_int("type a positive number ");
 
 }
