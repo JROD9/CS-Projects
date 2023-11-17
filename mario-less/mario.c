@@ -6,7 +6,7 @@ int main(void)
 
     for (int i = 0; i >= 1 && i <=8; i++)
     {
-        printf("#"\n);
+        printf("#\n");
     }
 
 }
