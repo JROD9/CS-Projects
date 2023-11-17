@@ -9,7 +9,7 @@ int main(void)
     {
         height = get_int("how tall is your pyramid? \n");
     }
-    while ( height<=1 && height>=8);
+    while ( height<0 && height>9);
 
 
     for (int rows = 0; rows < height; rows ++)
