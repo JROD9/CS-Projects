@@ -16,11 +16,11 @@ int main(void)
         int space, hashes;
         for ( space = 0; space < height; space ++)
         {
-           printf(" ");
+           printf("#");
+         printf("\n");
         }
        // for (hashes = height - space + 1; hashes < height; hashes ++)
       //  {
-            printf("#");
-         printf("\n");
+
     }
 }
