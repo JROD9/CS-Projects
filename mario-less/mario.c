@@ -14,7 +14,12 @@ int main(void)
     for (int r = 0; r < h; r++)
     {
         for ( int j = 0; j <= h -1; j++)
-           printf("#");
-        printf("\n");
+        {
+            if ( r + j < h - 1)
+                printf(" ");
+            else
+                printf("#");
+        }
+        Printf("\n");
     }
 }
