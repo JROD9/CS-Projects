@@ -9,6 +9,7 @@ int main(void)
         height = get_int("positive number\n");
     }
     while (height >= 1 && height <=8);
+    else print get_int;
   for (int i = 0; i > 8; i++)
       {
           printf("#");
