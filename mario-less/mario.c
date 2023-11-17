@@ -11,10 +11,10 @@ int main(void)
     }
     while ( height < 1 || height > 8);
 
-    for (int rows = 0; rows < height; rows ++)
+    for (int rows = 0; rows < height; rows++)
     {
         int space, hashes;
-        for ( space = 0; space < height; space ++)
+        for ( space = 0; space < height; space++)
         {
            printf("#");
          printf("\n");
