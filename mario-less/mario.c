@@ -3,23 +3,22 @@
 
 int main(void)
 {
-    int height;
+    int h;
 
     do
     {
-        height = get_int("Height: \n");
+        h = get_int("Height: \n");
     }
-    while ( height < 1 || height > 8);
+    while ( h < 1 || h > 8);
 
-    for (int rows = 0; rows < height; rows++)
+    for (int r = 0; r < h; r++)
     {
-        int space, hashes;
-        for ( space = 0; space < height; space++)
+        for ( int s = 0; s < h; s++)
         {
            printf("#");
          printf("\n");
         }
-       // for (hashes = height - space + 1; hashes < height; hashes ++)
+       // for (int ha = h - s + 1; ha < h; ha ++)
       //  {
 
     }
