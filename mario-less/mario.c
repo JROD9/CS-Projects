@@ -4,6 +4,6 @@
 int main(void)
 {
     int height = get_int("type a positive number ");
-    printf("height,%s\n", height);
+    printf("height, %d \n", height);
 
 }
