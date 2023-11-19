@@ -5,12 +5,22 @@ int main(void)
 {
     // TODO: Prompt for start size
     int ssize;
-    ssize = get_int("Start size: \n");
+    do
+    {
+        ssize = get_int("Start size: \n");
+    }
+    while(ssize >= 9);
+
     // TODO: Prompt for end size
     int esize;
-    esize = get_int("End size: \n");
+    do
+    {
+        esize = get_int("End size: \n");
+    }
+    while(esize >= 9);
     // TODO: Calculate number of years until we reach threshold
+    int years;
     
     // TODO: Print number of years
-    printf(Years: %i\n);
+    printf("Years: %i\n", years);
 }
