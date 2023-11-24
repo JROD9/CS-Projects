@@ -23,7 +23,7 @@ int main(void)
     gain = (ssize/3);
     lose = (ssize/4);
     year = (gain - lose);
-    years = (year / esize);
+    years = (esize / year);
     // TODO: Print number of years
-    printf("Years: %i\n", years);
+    printf("Years: %i\n", year);
 }
