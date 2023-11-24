@@ -20,13 +20,12 @@ int main(void)
     while (esize < 9);
     // TODO: Calculate number of years until we reach threshold
 
-    int year = 0;
-    do
+     int years = 0;
+    while (end >= start)
     {
-        ssize = ssize + (ssize / 3) - (ssize / 4);
-        year++;
+        ssize = ssize + ssize / 3 - ssize / 4;
+        years++;
     }
-    while (ssize < esize);
     // TODO: Print number of years
-    printf("Years: %i\n", year);
+    printf("Years: %i\n", years);
 }
