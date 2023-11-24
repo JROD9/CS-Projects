@@ -9,7 +9,7 @@ int main(void)
     {
         ssize = get_int("Start size: ");
     }
-    while (ssize <= 8);
+    while (ssize < 9);
 
     // TODO: Prompt for end size
     int esize;
@@ -17,7 +17,7 @@ int main(void)
     {
         esize = get_int("End size: ");
     }
-    while (esize <= 8);
+    while (esize < 9);
     // TODO: Calculate number of years until we reach threshold
 
     int year = 0;
