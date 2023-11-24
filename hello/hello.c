@@ -3,6 +3,5 @@
 
 int main(void)
 {
-    int age = get_int("whats your age\n");
-    printf("your %i years old\n", age);
+    printf("Years\n");
 }
