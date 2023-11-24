@@ -18,12 +18,11 @@ int main(void)
         esize = get_int("End size: ");
     }
     while (esize < ssize);
+    int year = 0;
+    year = ssize;
     // TODO: Calculate number of years until we reach threshold
 
-    while (ssize > esize);
-
-    int year = 0;
-    while (ssize < esize)
+    while (year < esize)
     {
         ssize += (ssize / 3) - (ssize / 4);
         year++;
