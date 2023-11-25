@@ -15,9 +15,9 @@ int main(void)
 
 
     // analysing input
-    int t = count_letters(string text);
-    int w = count_words(string text);
-    int e = count_sentences(string text);
+    count_letters(string text);
+    count_words(string text);
+    count_sentences(string text);
 
 
     // calculation input
@@ -41,6 +41,6 @@ int main(void)
  //       printf("Before Grade 1");
  //   }
  {
-    printf("%i\n %i\n %i\n", t, w, e);
+    printf("%i\n %i\n %i\n");
  }
 }
