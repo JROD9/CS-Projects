@@ -5,7 +5,8 @@ int main(void)
 {
     do
     {
-        string text = get_string("Text: \n");
+        string text = get_string("Text: ");
+        printf(text);
     }
     while();
 
