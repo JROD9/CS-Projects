@@ -9,10 +9,9 @@ int main(void)
         printf("%s\n", text);
     }
      while();
-    int count_letters(string text);
-    int index, L, S, w, t, e;
+    int t = count_letters(string text);
+    int index, L, S, w, e;
 
-    t = ;
     w = ;
     e = ;
     L = (t/w);
