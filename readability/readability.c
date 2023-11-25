@@ -41,6 +41,6 @@ int main(void)
  //       printf("Before Grade 1");
  //   }
  {
-    printf("%i \n%i\n %i\n", t, w, e);
+    printf("%i\n %i\n %i\n", t, w, e);
  }
 }
