@@ -15,8 +15,9 @@ int main(void)
     e = ;
     L = (t/w);
     S = (e/w);
+    
     index = 0.0588 * L - 0.296 * S - 15.8;
 
     //printing grade
-    printf("Grade level: %i \n", index);
+    printf("Grade %i\n", index);
 }
