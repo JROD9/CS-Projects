@@ -1,6 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
-#include <ctype.h>
+
 
 int main(void)
 {
@@ -9,15 +9,15 @@ int main(void)
  //   do
     {
         string text = get_string("Text: ");
-        printf("%s\n", text);
+       // printf("%s\n", text);
     }
   //   while();
 
 
     // analysing input
-    count_letters(string text);
-    count_words(string text);
-    count_sentences(string text);
+    int t = count_letters(string text);
+    int w = count_words(string text);
+    int e = count_sentences(string text);
 
 
     // calculation input
@@ -33,7 +33,7 @@ int main(void)
  //       printf("Grade %i\n", index);
  //   }
  //   else if(index >= 16)
-//    {
+//    { make readability
  //       printf("Grade 16+");
  //   }
   //  else (index < 1)
@@ -41,6 +41,6 @@ int main(void)
  //       printf("Before Grade 1");
  //   }
  {
-    printf("%i\n %i\n %i\n");
+    printf("%i\n %i\n %i\n", t, w, e);
  }
 }
