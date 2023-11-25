@@ -37,12 +37,12 @@ int main(void)
  //   else if(index >= 16)
 //    { make readability
  //       printf("Grade 16+");
- //   }
+ //   } hello oven baker mom. your the best. and the worst.
   //  else (index < 1)
  //   {
  //       printf("Before Grade 1");
  //   }
- {
-    printf("0");
- }
+// {
+  //  printf("0");
+// }
 }
