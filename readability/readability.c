@@ -5,21 +5,53 @@
 
 int main(void)
 {
-
-    // asking for input
- //   do
     {
         string text = get_string("Text: ");
-        printf("%s\n", text);
+
+        int letters = 0;
+        int words = 1;
+        int sentences = 0;
+
+    for (int i = 0; i < strlen(text); i++)
+    {
+        if(isalpha(text[i]))
+        {
+            letters++;
+        }
+        else if (text[i] == ' ')
+        {
+            words++;
+        }
+        else if (text[i] == '.' || text[i] == '!')
+        {
+            sentences++;
+        }
+        float L = (float) letters / (float) words * 100;
+        float S= (float) sentences / (float) words * 100;
+
+        int index = round(0.0588 * L - 0.296 * S - 15.8);
+
+         if (index >= 1 && index < 16)
+    {
+        printf("Grade %i\n", index);
     }
-  //   while();
+    else if(index >= 16)
+    {
+        printf("Grade 16+");
+    }
+    else (index < 1)
+    {
+        printf("Before Grade 1");
+    }
+}
+
 
 
     // analysing input
 
-    int count_letters(string text);
-    int count_words(string text);
-    int count_sentences(string text);
+   // int count_letters(string text);
+   // int count_words(string text);
+   // int count_sentences(string text);
 
 
     // calculation input
