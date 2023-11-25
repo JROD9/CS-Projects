@@ -10,6 +10,9 @@ int main(void)
     while();
 
     int index, L, S, w, t, e;
+    t = ;
+    w = ;
+    e = ;
     L = (t/w);
     S = (e/w);
     index = 0.0588 * L - 0.296 * S - 15.8;
