@@ -1,9 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <ctype.h>
 
-int count_letters;
-int count_words;
-int count_sentences;
 
 int main(void)
 {
@@ -18,9 +16,10 @@ int main(void)
 
 
     // analysing input
-    int t = count_letters(string text);
-    int w = count_words(string text);
-    int e = count_sentences(string text);
+
+    int count_letters(string text);
+    int count_words(string text);
+    int count_sentences(string text);
 
 
     // calculation input
@@ -44,6 +43,6 @@ int main(void)
  //       printf("Before Grade 1");
  //   }
  {
-    printf("%i\n %i\n %i\n", t, w, e);
+    printf("0");
  }
 }
