@@ -29,22 +29,22 @@ int main(void)
             sentences++;
         }
     }
-        float L = (float) letters / (float) words * 100
-        float S= (float) sentences / (float) words * 100
+        float L = (float) letters / (float) words * 100;
+        float S= (float) sentences / (float) words * 100;
 
         int index = round(0.0588 * L - 0.296 * S - 15.8);
 
-         if (index >= 1 && index < 16)
+         if (index < 1)
+    {
+        printf("Before Grade 1\n");
+    }
+    else if(index > 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else
     {
         printf("Grade %i\n", index);
-    }
-    else if(index >= 16)
-    {
-        printf("Grade 16+");
-    }
-    else(index < 1)
-    {
-        printf("Before Grade 1");
     }
 }
 
@@ -71,6 +71,7 @@ int main(void)
  //   }
  //   else if(index >= 16)
 //    { make readability
+// ./readability
  //       printf("Grade 16+");
  //   } hello oven baker mom. your the best. and the worst.
   //  else (index < 1)
