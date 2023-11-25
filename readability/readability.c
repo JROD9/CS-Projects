@@ -12,7 +12,7 @@ int main(void)
  //   do
     {
         string text = get_string("Text: ");
-       // printf("%s\n", text);
+        printf("%s\n", text);
     }
   //   while();
 
