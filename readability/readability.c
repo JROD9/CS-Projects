@@ -43,6 +43,8 @@ int main(void)
     {
         printf("Before Grade 1");
     }
+    }
+    }
 }
 
 
@@ -77,4 +79,3 @@ int main(void)
 // {
   //  printf("0");
 // }
-}
