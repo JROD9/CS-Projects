@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <math.h>
 
 
 int main(void)
@@ -40,10 +41,9 @@ int main(void)
     {
         printf("Grade 16+");
     }
-    else (index < 1)
+    else(index < 1)
     {
         printf("Before Grade 1");
-    }
     }
 }
 
