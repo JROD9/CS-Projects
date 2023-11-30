@@ -3,6 +3,7 @@
 
 int main(void)
 {
-    string apples = "how";
+    int apples = "how";
     printf("Hello, World %s\n", apples);
+    printf("the worlds crazy %s\n", apples);
 }
