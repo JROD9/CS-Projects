@@ -3,9 +3,8 @@
 
 int main(void)
 {
-    int apples = 5;
-
-    get_int("How old are you");
+    int apples;
+    apples = get_int("How old are you");
 
     if (apples > 5)
     {
@@ -16,3 +15,4 @@ int main(void)
         printf("%i\n", apples);
     }
 }
+
