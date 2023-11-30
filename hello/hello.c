@@ -3,7 +3,5 @@
 
 int main(void)
 {
-    printf("Hello %i\n", apples);
+    printf("Hello, World\n");
 }
-
-
