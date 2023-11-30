@@ -3,7 +3,14 @@
 
 int main(void)
 {
-    int apples = "how";
-    printf("Hello, World %s\n", apples);
-    printf("the worlds crazy %s\n", apples);
+    int apples = 5;
+
+    if (apples > 5)
+    {
+    printf("Hello %i\n", apples);
+    }
+    else
+    {
+        printf("%i\n", apples);
+    }
 }
