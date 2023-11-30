@@ -3,5 +3,6 @@
 
 int main(void)
 {
-    printf("Years\n");
+    string apples = "how";
+    printf("Hello, World %s\n", apples);
 }
