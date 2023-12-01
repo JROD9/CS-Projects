@@ -9,8 +9,9 @@ void print_bulb(int bit);
 int main(void)
 {
     // TODO
-    string name = get_string("Whats your name");
-    printf("HI %s", name)
+    string name = get_string("Whats your name\n");
+    printf("HI %s\n", name);
+
 }
 
 void print_bulb(int bit)
