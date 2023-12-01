@@ -27,6 +27,7 @@ int main(void)
             decimal = decimal / 2;
             j++;
         }
+        for (int k = 7; )
         printf("%c", toupper(name[i]));
     }
     printf("\n");
