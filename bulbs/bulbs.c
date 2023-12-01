@@ -16,7 +16,7 @@ int main(void)
      name[1] = "one\n";
      name[2] = "to\n";
 
-    printf("HI %s %i %i %i \n", name[0], name[2][0], name[2][1], name[2][2]);
+    printf("HI %c %c %c \n", name[2][0], name[2][1], name[2][2]);
 
 }
 
