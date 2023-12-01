@@ -14,8 +14,6 @@ int main(void)
 
     string name = get_string ("what's your name? ");
 
-
-
     for(int i = 0, n = strlen(name); i < n; i++)
     {
         int decimal = name[i];
@@ -27,13 +25,14 @@ int main(void)
             decimal = decimal / 2;
             j++;
         }
-        for (int k = 7; )
-        printf("%c", toupper(name[i]));
+
+
+        for (int k = BITS_IN_BYTE - 1;k >= 0; k--)
+        {
+            print_bulb(binary[k]);
+        }
     }
     printf("\n");
-
-
-   // printf("%s\n", name);
 
 }
 
