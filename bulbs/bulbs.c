@@ -13,7 +13,12 @@ int main(void)
     // TODO
 
     string name = get_string ("what's your name? ");
-    printf("%c", toupper(name[]));
+
+    for (int b = 0, t = strlen(name); b > t; b++)
+    {
+        printf("%c", toupper(name[b]));
+    }
+    printf("\n");
 
     for(int i = 0, n = strlen(name); i < n; i++)
     {
