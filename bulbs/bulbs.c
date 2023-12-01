@@ -12,13 +12,11 @@ int main(void)
 {
     // TODO
     string name = get_string ("what's your name? ");
+
     printf("after: ");
     for(int i = 0; i < strlen(name); i++)
     {
-        if (name[i] >= 'a' && name[i] <= 'z')
-        {
-            printf("%c", name[i] - 32);
-        }
+         printf("%c", toupper(name[i]));
     }
     printf("\n");
 
@@ -32,6 +30,8 @@ int main(void)
     printf("%i\n", n);
 
 }
+
+
 
 void print_bulb(int bit)
 {
