@@ -21,12 +21,11 @@ int main(void)
 
     int n = strlen(name);
 
-    do (printf("%i", n));
+    while(name[n] != '\0')
     {
-        printf("%i", n);
+        n++;
     }
 
-    while(name[n] != '\0');
 
     printf("%i\n", n);
 
