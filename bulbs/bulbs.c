@@ -1,7 +1,7 @@
 #include <cs50.h>
-#include <stdio.h>
-#include <math.h>
 #include <ctype.h>
+#include <math.h>
+#include <stdio.h>
 #include <string.h>
 
 const int BITS_IN_BYTE = 8;
@@ -12,7 +12,7 @@ int main(void)
 {
     // TODO
 
-    string name = get_string ("MESSAGE: ");
+    string name = get_string("MESSAGE: ");
 
     for (int b = 0, t = strlen(name); b < t; b++)
     {
@@ -20,11 +20,11 @@ int main(void)
     }
     printf("\n");
 
-    for(int i = 0, n = strlen(name); i < n; i++)
+    for (int i = 0, n = strlen(name); i < n; i++)
     {
         int decimal = name[i];
 
-        int binary[] = {0,0,0,0,0,0,0,0};
+        int binary[] = {0, 0, 0, 0, 0, 0, 0, 0};
 
         int j = 0;
 
@@ -35,16 +35,13 @@ int main(void)
             j++;
         }
 
-
-        for (int k = BITS_IN_BYTE - 1;k >= 0; k--)
+        for (int k = BITS_IN_BYTE - 1; k >= 0; k--)
         {
             print_bulb(binary[k]);
         }
-    printf("\n");
+        printf("\n");
     }
 }
-
-
 
 void print_bulb(int bit)
 {
