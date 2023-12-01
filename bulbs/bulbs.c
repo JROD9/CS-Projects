@@ -12,20 +12,21 @@ int main(void)
 {
     // TODO
 
-    string name[0];
-    for (int k = 0; k < name[1]; k++)
-    {
-     name[k] = get_string ("what's your name? ");
-    }
+    string name = get_string ("what's your name? ");
 
-    for(int i = 0, n = strlen(name[k]); i < n; i++)
+    for(int i = 0, n = strlen(name); i < n; i++)
     {
-         printf("%c", toupper(name[k]));
+         printf("%c", toupper(name[i]));
     }
     printf("\n");
 
+    for(int j = 0; j > strlen(name); j++)
+    {
+        printf("%d", j % 2);
+    }
 
-    printf("%i\n", name[1][0]);
+
+   // printf("%s\n", name);
 
 }
 
