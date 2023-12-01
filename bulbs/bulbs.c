@@ -14,7 +14,7 @@ int main(void)
     string name = get_string("Whats your name\n");
     printf("HI %s\n", name);
 
-printf(print_bulb);
+    printf(print_bulb);
 
 }
 
