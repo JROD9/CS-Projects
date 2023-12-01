@@ -12,9 +12,9 @@ int main(void)
 {
     // TODO
 
-    string name = get_string ("what's your name? ");
+    string name = get_string ("MESSAGE: ");
 
-    for (int b = 0, t = strlen(name); b > t; b++)
+    for (int b = 0, t = strlen(name); b < t; b++)
     {
         printf("%c", toupper(name[b]));
     }
