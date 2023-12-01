@@ -13,17 +13,18 @@ int main(void)
     // TODO
     string name = get_string ("what's your name? ");
 
-    for(int i = 0, n = strlen(name[1]); i < n; i++)
+    for(int i = 0, n = strlen(name); i < n; i++)
     {
-         printf("%c", toupper(n));
+         printf("%c", toupper(name[i]));
     }
     printf("\n");
 
-    //while(name[n] != '\0')
-    //{
-    //    n++;
-   // }
-   // printf("%i\n", n);
+    int j = strlen(name);
+    while(name[j] != '\0')
+    {
+        j++;
+    }
+    printf("%i\n", j);
 
 }
 
