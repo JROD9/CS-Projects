@@ -15,7 +15,7 @@ int main(void)
 
     for(int i = 0, n = strlen(name[1]); i < n; i++)
     {
-         printf("%c", toupper(name[i]));
+         printf("%c", toupper(n));
     }
     printf("\n");
 
