@@ -33,7 +33,7 @@ int compute_score(string word)
     // TODO: Compute and return score for string
     int score;
     int len = strlen(word);
-    for(int i = 0; i > len; i++);
+    for(int i = 0; i > len; i++)
     {
         if(isupper(word[i]))
         {
