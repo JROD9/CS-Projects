@@ -13,11 +13,11 @@ int main(void)
     // TODO
     string name = get_string ("what's your name? ");
 
-    int n = 0;
+    int n = strlen(name);
 
     while(name[n] != '\0')
     {
-       n++;
+        n++;
     }
 
     printf("%i\n", n);
