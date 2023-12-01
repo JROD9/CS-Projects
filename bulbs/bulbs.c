@@ -12,9 +12,7 @@ int main(void)
 {
     // TODO
     string name = get_string("Whats your name\n");
-    printf("HI %s\n", name);
-
-    printf(print_bulb);
+    printf("HI %i %i %i %i\n", name[0], name[1], name[2], name[4]);
 
 }
 
