@@ -12,13 +12,14 @@ int main(int argc, string argv[])
 {
     // TODO
     string name = get_string ("what's your name? ");
-    int n = strlen(name[1]);
 
     for(int i = 0; i < strlen(name[1]); i++)
     {
          printf("%c", toupper(name[i]));
     }
     printf("\n");
+
+    int n = strlen(name[1]);
 
     while(name[n] != '\0')
     {
