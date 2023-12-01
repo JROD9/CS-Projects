@@ -11,23 +11,20 @@ void print_bulb(int bit);
 int main(int argc, string argv[])
 {
     // TODO
-    string name = get_string ("what's your name? ");
     printf("what's your name? %s\n", argv[1]);
 
-    for(int i = 0, n = strlen(name); i < n; i++)
+    for(int i = 0, n = strlen(argv[1]); i < n; i++)
     {
-         printf("%c", toupper(name[i]));
+         printf("%c", toupper(argv[i]));
     }
     printf("\n");
 
-    int n = strlen(name);
+    int n = strlen(argv[1]);
 
-    while(name[n] != '\0')
+    while(argv[n] != '\0')
     {
         n++;
     }
-
-
     printf("%i\n", n);
 
 }
