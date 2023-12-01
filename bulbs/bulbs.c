@@ -8,24 +8,22 @@ const int BITS_IN_BYTE = 8;
 
 void print_bulb(int bit);
 
-int main(int argc, string argv[])
+int main(void)
 {
     // TODO
     string name = get_string ("what's your name? ");
 
-    for(int i = 0; i < strlen(name); i++)
+    for(int i = 0, n = strlen(name[1]); i < n; i++)
     {
          printf("%c", toupper(name[i]));
     }
     printf("\n");
 
-    int n = strlen(name[1]);
-
-    while(name[n] != '\0')
-    {
-        n++;
-    }
-    printf("%i\n", n);
+    //while(name[n] != '\0')
+    //{
+    //    n++;
+   // }
+   // printf("%i\n", n);
 
 }
 
