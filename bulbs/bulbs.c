@@ -19,12 +19,9 @@ int main(void)
     }
     printf("\n");
 
-    int j = strlen(name);
-    while(name[j] != '\0')
-    {
-        j++;
-    }
-    printf("%i\n", j);
+    int n = strlen(name);
+    string b[name];
+    printf("%c %c %c\n", b [1][0], b [1][1], b [1][2]);
 
 }
 
