@@ -14,18 +14,22 @@ int main(void)
 
     string name = get_string ("what's your name? ");
 
-    
+
 
     for(int i = 0, n = strlen(name); i < n; i++)
     {
-         printf("%c", toupper(name[i]));
+        int decimal = name[i];
+        int binary[] = {0,0,0,0,0,0,0,0};
+        int j = 0;
+        while (decimal > 0)
+        {
+            binary[j] = decimal %2;
+            decimal = decimal / 2;
+            j++;
+        }
+        printf("%c", toupper(name[i]));
     }
     printf("\n");
-
-    for(int j = 0; j > strlen(name); j++)
-    {
-        printf("%d", j % 2);
-    }
 
 
    // printf("%s\n", name);
