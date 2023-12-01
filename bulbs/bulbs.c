@@ -12,7 +12,7 @@ int main(void)
 {
     // TODO
     string name = get_string ("what's your name? ");
-    printf("after: \n");
+    printf("after: ");
     for(int i = 0; i < strlen(name); i++)
     {
         if (name[i] >= 'a' && name[i] <= 'z')
@@ -20,6 +20,7 @@ int main(void)
             printf("%c", name[i] - 32);
         }
     }
+    printf("\n");
 
     int n = strlen(name);
 
