@@ -8,7 +8,7 @@ const int BITS_IN_BYTE = 8;
 
 void print_bulb(int bit);
 
-int main(int argc, int argv[])
+int main(int argc, string argv[])
 {
     // TODO
     string name = get_string ("what's your name? ");
