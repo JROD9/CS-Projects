@@ -13,6 +13,7 @@ int main(void)
     // TODO
 
     string name = get_string ("what's your name? ");
+    printf("%c", toupper(name[]));
 
     for(int i = 0, n = strlen(name); i < n; i++)
     {
@@ -34,9 +35,8 @@ int main(void)
         {
             print_bulb(binary[k]);
         }
-    }
     printf("\n");
-
+    }
 }
 
 
