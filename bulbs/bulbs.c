@@ -11,16 +11,16 @@ void print_bulb(int bit);
 int main(void)
 {
     // TODO
-    string n;
-    string name[n];
-    for (name[n])
+
+    string name[0];
+    for (int k = 0; k < name[1]; k++)
     {
-    string name = get_string ("what's your name? ");
+     name[k] = get_string ("what's your name? ");
     }
-    
-    for(int i = 0, n = strlen(name); i < n; i++)
+
+    for(int i = 0, n = strlen(name[k]); i < n; i++)
     {
-         printf("%c", toupper(name[i]));
+         printf("%c", toupper(name[k]));
     }
     printf("\n");
 
