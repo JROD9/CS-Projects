@@ -15,8 +15,8 @@ int main(void)
      name[0] = "hello\n";
      name[1] = "one\n";
      name[2] = "to\n";
-s
-    printf("HI %i %i %i %i\n", name[0], name[1], name[2], name[2][0], name[2][1], name[2][2]);
+
+    printf("HI %s %i %i %i \n", name[0], name[2][0], name[2][1], name[2][2]);
 
 }
 
