@@ -1,5 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <math.h>
+#include <ctype.h>
 #include <string.h>
 
 const int BITS_IN_BYTE = 8;
@@ -19,9 +21,16 @@ int main(void)
 
     for()
     {
-        printf(" ";)
+        for ()
+        {
+            if ()
+            printf((print_bubl))
+            else
+            (printf(print_bulb))
+
+        }
     }
-    
+
 
 
 }
