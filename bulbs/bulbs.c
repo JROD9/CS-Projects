@@ -20,8 +20,6 @@ int main(void)
     }
     printf("\n");
 
-    int n = strlen(name);
-
     while(name[n] != '\0')
     {
         n++;
