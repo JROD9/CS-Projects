@@ -18,11 +18,15 @@ int main(void)
          printf("%c", toupper(name[i]));
     }
     printf("\n");
+
     int n = strlen(name);
-    while(name[n] != '\0')
+
+    do (printf("%i", n));
     {
-        n++;
+        printf("%i", n);
     }
+
+    while(name[n] != '\0');
 
     printf("%i\n", n);
 
