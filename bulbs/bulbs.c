@@ -11,12 +11,16 @@ void print_bulb(int bit);
 int main(void)
 {
     // TODO
-    string name[4];
-     name[0] = "hello\n";
-     name[1] = "one\n";
-     name[2] = "to\n";
+    string name = get_string ("what's your name? ");
 
-    printf("HI %c %c %c \n", name[2][0], name[2][1], name[2][2]);
+    int n = 0;
+
+    while(name[n] != '\0')
+    {
+       n++;
+    }
+
+    printf("%i\n", n);
 
 }
 
