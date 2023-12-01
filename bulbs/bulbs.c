@@ -13,23 +13,6 @@ int main(void)
     // TODO
     string name = get_string("Whats your name\n");
     printf("HI %s\n", name);
-    do
-    {
-        printf();
-    }
-    while();
-
-    for()
-    {
-        for ()
-        {
-            if ()
-            printf((print_bubl))
-            else
-            (printf(print_bulb))
-
-        }
-    }
 
 
 
