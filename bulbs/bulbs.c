@@ -14,6 +14,8 @@ int main(void)
 
     string name = get_string ("what's your name? ");
 
+    
+
     for(int i = 0, n = strlen(name); i < n; i++)
     {
          printf("%c", toupper(name[i]));
