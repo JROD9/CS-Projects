@@ -8,10 +8,11 @@ const int BITS_IN_BYTE = 8;
 
 void print_bulb(int bit);
 
-int main(void)
+int main(int argc, int argv[])
 {
     // TODO
     string name = get_string ("what's your name? ");
+    printf("what's your name? %s\n", argv[1]);
 
     for(int i = 0, n = strlen(name); i < n; i++)
     {
