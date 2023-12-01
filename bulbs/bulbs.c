@@ -17,11 +17,14 @@ int main(void)
     for(int i = 0, n = strlen(name); i < n; i++)
     {
         int decimal = name[i];
+
         int binary[] = {0,0,0,0,0,0,0,0};
+
         int j = 0;
+
         while (decimal > 0)
         {
-            binary[j] = decimal %2;
+            binary[j] = decimal % 2;
             decimal = decimal / 2;
             j++;
         }
