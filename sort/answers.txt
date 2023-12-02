@@ -4,13 +4,18 @@ How do you know?: TODO
 
 reversed50,000.txt -> 4.817s
 
-sort2 uses: TODO
+
+
+sort2 uses: Merge Sort
 
 How do you know?: TODO
+
+reversed50,000.txt - >.447s
+
+
 
 sort3 uses: TODO
 
 How do you know?: TODO
 
-
-(reveresed50000)
+reveresed50,000.txt -> 2.489s
