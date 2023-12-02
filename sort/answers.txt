@@ -1,9 +1,10 @@
-sort1 uses: TODO
+sort1 uses: Bubble Sort
 
 How do you know?: TODO
 
 reversed50,000.txt -> 4.817s
 
+sorted50,000 -> .427s
 
 
 sort2 uses: Merge Sort
@@ -14,8 +15,10 @@ reversed50,000.txt - >.447s
 
 
 
-sort3 uses: TODO
+sort3 uses: Selection Sort
 
 How do you know?: TODO
 
 reveresed50,000.txt -> 2.489s
+
+sorted50,000 -> 2.582s
