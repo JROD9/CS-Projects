@@ -3,7 +3,6 @@ sort1 uses: Bubble Sort
 How do you know?: TODO
 
 reversed50,000.txt -> 4.817s
-
 sorted50,000 -> .427s
 
 sort 1 was faster than sort 3 in sorting sorted50,000
@@ -15,8 +14,7 @@ How do you know?: TODO
 
 reversed50,000.txt - >.447s
 
-faster than all at sorting reveresed 50,000 
-
+faster than all at sorting reveresed 50,000
 
 
 sort3 uses: Selection Sort
@@ -24,7 +22,6 @@ sort3 uses: Selection Sort
 How do you know?: TODO
 
 reveresed50,000.txt -> 2.489s
-
 sorted50,000 -> 2.582s
 
 sort3 was slower than sorting sorted50,000 than sort1
