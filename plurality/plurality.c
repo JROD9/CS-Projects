@@ -82,7 +82,7 @@ void print_winner(void)
 {
     // TODO
     string winner;
-    while()
+    while(winner > 1)
     printf("%s", winner)
     return ;
 }
