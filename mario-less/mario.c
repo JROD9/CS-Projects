@@ -9,7 +9,7 @@ int main(void)
     {
         h = get_int("Height: \n");
     }
-    while (h < 1 || h > 8);
+    while (h < 1 || h > 99);
 
     for (int r = 0; r < h; r++)
     {
