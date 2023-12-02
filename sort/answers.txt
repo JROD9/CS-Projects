@@ -1,6 +1,6 @@
 sort1 uses: Bubble Sort
 
-How do you know?: TODO
+How do you know?:
 
 reversed50,000.txt -> 4.817s
 sorted50,000 -> .427s
@@ -10,18 +10,20 @@ sort 1 was faster than sort 3 in sorting sorted50,000
 
 sort2 uses: Merge Sort
 
-How do you know?: TODO
+How do you know?:
 
 reversed50,000.txt - >.447s
 
-faster than all at sorting reveresed 50,000
+for a reveresed text file of 50,000 numbers, it was exponentially faster
+compared to the other sorting programs
 
 
 sort3 uses: Selection Sort
 
-How do you know?: TODO
+How do you know?: 
 
 reveresed50,000.txt -> 2.489s
 sorted50,000 -> 2.582s
 
-sort3 was slower than sorting sorted50,000 than sort1
+it was the slowest sorting program in reveresed numeber text file, as well as a sorted
+text file. hence we can conclude that this is a selection sort.
