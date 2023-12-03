@@ -43,11 +43,11 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             int sepiaBlue = round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue);
 
             //find the average value
-            if (sepiaRed > 255);
+            if (sepiaRed > 255)
             {
                 sepiaRed = 255;
             }
-            if (sepiaBlue > 255);
+            if (sepiaBlue > 255)
             {
                 sepiaBlue = 255;
             }
@@ -58,7 +58,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 
             //update the final pixels
             image[i][j].rgbtRed = sepiaRed;
-            Image[i][j].rgbtGreen = sepiaGreen;
+            image[i][j].rgbtGreen = sepiaGreen;
             image[i][j].rgbtBlue = sepiaBlue;
         }
     }
