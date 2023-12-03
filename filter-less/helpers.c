@@ -140,7 +140,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     for(int i = 0; i < height; i++)
     {
         //comb through each column
-        for(int j = 0; j < width ; j++)
+        for(int j = 0; j < width; j++)
         {
             image[i][j].rgbtRed = temp[i][j].rgbtRed;
             image[i][j].rgbtBlue = temp[i][j].rgbtBlue;
