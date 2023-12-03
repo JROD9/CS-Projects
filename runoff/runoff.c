@@ -128,9 +128,9 @@ int main(int argc, string argv[])
 bool vote(int voter, int rank, string name)
 {
     // TODO
-    for(int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if(strcmp(candidates[i].name, name) == 0)
+        if (strcmp(candidates[i].name, name) == 0)
         {
             preferences[voter][rank] = i;
             return true;
@@ -143,11 +143,11 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
-    for (int i = 0; i < voter_count;i++)
+    for (int i = 0; i < voter_count; i++)
     {
-        for(int j = 0; j < candidate_count; j++)
+        for (int j = 0; j < candidate_count; j++)
         {
-            if(candidates[preferences[i][j]].eliminated == false)
+            if (candidates[preferences[i][j]].eliminated == false)
             {
                 candidates[preferences[i][j]].votes++;
                 break;
@@ -161,9 +161,9 @@ void tabulate(void)
 bool print_winner(void)
 {
     // TODO
-    for(int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if(candidates[i].votes > voter_count/2)
+        if (candidates[i].votes > voter_count / 2)
         {
             printf("%s\n", candidates[i].name);
             return true;
@@ -177,9 +177,9 @@ int find_min(void)
 {
     // TODO
     int min = voter_count;
-    for(int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if(candidates[i].votes < min && candidates[i].eliminated == false)
+        if (candidates[i].votes < min && candidates[i].eliminated == false)
         {
             min = candidates[i].votes;
         }
@@ -194,23 +194,22 @@ bool is_tie(int min)
     int eliminate = 0;
     int counter = 0;
 
-    for(int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-    if(!candidates[i].eliminated)
-    {
-        eliminate++;
-    }
-    if (candidates[i].votes == min)
-    {
-        counter++;
-    }
+        if (!candidates[i].eliminated)
+        {
+            eliminate++;
+        }
+        if (candidates[i].votes == min)
+        {
+            counter++;
+        }
     }
     if (eliminate == counter)
     {
         return true;
     }
     return false;
-
 }
 
 // Eliminate the candidate (or candidates) in last place
@@ -219,9 +218,9 @@ void eliminate(int min)
     // TODO
     for (int i = 0; i < candidate_count; i++)
     {
-        if(candidates[i].votes == min)
+        if (candidates[i].votes == min)
         {
-        candidates[i].eliminated = true;
+            candidates[i].eliminated = true;
         }
     }
     return;
