@@ -32,10 +32,15 @@ int main(int argc, char *argv[])
     // char filename[8]
     char *filename = malloc(8 * sizeof(char));
 
+    // read blocks of 512 bytes
     while (fread(buffer, sizeof(char), 512, input_file))
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
+            if (count_image > 0)
+            {
+                fclose(output_file);
+            }
             // write the jped filenames
             sprintf(filename, "%03i.jpg", count_image);
 
