@@ -28,7 +28,10 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
     for(int i = 0; i < height; i++)
     {
-        for()
+        for(int j = 0; j < width; j++)
+        {
+            if
+        }
     }
     return;
 }
