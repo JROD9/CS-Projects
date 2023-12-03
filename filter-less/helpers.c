@@ -95,7 +95,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         //comb through each column
         for(int j = 0; j < width / 2; j++)
         {
-            time[i][j] = image[i][j];
+            temp[i][j] = image[i][j];
         }
     }
     //comb through each row
@@ -109,7 +109,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             float counter = 0.00;
 
             // get neghnouring pixels
-            for(int i = -1; x < 2; x++)
+            for(int x = -1; x < 2; x++)
             {
                 for(int y = -1; y < 2; y++)
                 {
