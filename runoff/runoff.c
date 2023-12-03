@@ -127,11 +127,11 @@ int main(int argc, string argv[])
 bool vote(int voter, int rank, string name)
 {
     // TODO
-    for(i = 0; i < candidate_count; i++)
+    for(int i = 0; i < candidate_count; i++)
     {
-        if(candidate[i].name == voter)
+        if(strcmp(candidate[i].name, name) == 0)
         {
-            printf(candidate[i].name = voter);
+            preference[voter][rank] = i;
             return true;
         }
     }
@@ -142,6 +142,14 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
+    for (int i = 0; i < candidate_count;i++)
+    {
+        if(strcmp(candidate[i].name, name) == 0)
+        {
+            preference[voter][rank] = i;
+            return true;
+        }
+    }
     return;
 }
 
