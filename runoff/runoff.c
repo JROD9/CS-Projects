@@ -142,12 +142,15 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
-    for (int i = 0; i < candidate_count;i++)
+    for (int i = 0; i < voter_count;i++)
     {
-        if(strcmp(candidate[i].name, name) == 0)
+        for(int j = 0; j < candidate_count; j++)
         {
-            preference[voter][rank] = i;
-            return true;
+            if(candidate[preference[i][j]].eliminated == flase)
+            {
+                candidate[preference[i][j]].votes++;
+                break;
+            }
         }
     }
     return;
@@ -157,6 +160,7 @@ void tabulate(void)
 bool print_winner(void)
 {
     // TODO
+    
     return false;
 }
 
