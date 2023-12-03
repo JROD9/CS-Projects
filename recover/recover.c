@@ -32,8 +32,8 @@ int main(int argc, char *argv[])
     //char filename[8]
     char *filename = malloc(8 * sizeof(char));
 
-    fread(buffer, sizeof(char), 512, input_file);
-
+    while (fread(buffer, sizeof(char), 512, input_file))
+    {
     if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
     {
         // write the jped filenames
@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
 
         //count the number of images created so far
         count_image++;
+    }
     }
     // check if the output has been used for valid input
     if (output_file != NULL)
