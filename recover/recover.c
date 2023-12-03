@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     // open file for reading
     FILE *input_file = fopen(argv[1], "r");
 
-    // chack for validility
+    // check for validility
     if (input_file == NULL)
     {
         printf("could not open file");
