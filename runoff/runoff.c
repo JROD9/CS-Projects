@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 // Max voters and candidates
 #define MAX_VOTERS 100
@@ -129,7 +130,7 @@ bool vote(int voter, int rank, string name)
     // TODO
     for(int i = 0; i < candidate_count; i++)
     {
-        if(strcmp(candidate[i].name, name) == 0)
+        if(strcmp(candidates[i].name, name) == 0)
         {
             preference[voter][rank] = i;
             return true;
@@ -146,9 +147,9 @@ void tabulate(void)
     {
         for(int j = 0; j < candidate_count; j++)
         {
-            if(candidate[preference[i][j]].eliminated == flase)
+            if(candidates[preference[i][j]].eliminated == false)
             {
-                candidate[preference[i][j]].votes++;
+                candidates[preference[i][j]].votes++;
                 break;
             }
         }
@@ -199,7 +200,7 @@ bool is_tie(int min)
     {
         eliminate++;
     }
-    if (candidate[i].votes == min)
+    if (candidates[i].votes == min)
     {
         counter++;
     }
