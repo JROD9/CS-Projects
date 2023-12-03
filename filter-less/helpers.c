@@ -134,5 +134,17 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
         }
     }
+    //copy new pixels
+
+    //comb through each row
+    for(int i = 0; i < height; i++)
+    {
+        //comb through each column
+        for(int j = 0; j < width ; j++)
+        {
+            image[i][j].rgbtRed = temp[i][j].rgbtRed;
+            image[i][j].rgbtBlue = temp[i][j].rgbtBlue;
+            image[i][j].rgbtGreen = temp[i][j].rgbtGreen;
+        }
     return;
 }
