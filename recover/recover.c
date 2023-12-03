@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     }
 
     //storing blocks of 512 bytes in an array
-    unsigned car buffer[512];
+    unsigned char buffer[512];
 
 
     //track number of images being created
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     FILE *output_file = NULL;
 
     //char filename[8]
-    char *filename = malloc(8 * sizeof(cahr));
+    char *filename = malloc(8 * sizeof(char));
 
     fread(buffer, sizeof(char), 512, input_file);
 
