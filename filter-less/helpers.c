@@ -86,14 +86,39 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+    // create copy of image
+    RGBTRIPLE temp[height][width];
+
     //comb through each row
     for(int i = 0; i < height; i++)
     {
         //comb through each column
         for(int j = 0; j < width / 2; j++)
         {
-           
+            time[i][j] = image[i][j];
+        }
+    }
+    //comb through each row
+    for(int i = 0; i < height; i++)
+    {
+        //comb through each column
+        for(int j = 0; j < width / 2; j++)
+        {
+            int totalRed, totalBlue, totalGreen;
+            totalRed = totalBlue = totalGreen = 0;
+            float counter = 0.00;
 
+            // get neghnouring pixels
+            for(int i = -1; x < 2; x++)
+            {
+                for(int y = -1; y < 2; y++)
+                {
+                    int currentX = i + x;
+                    int currentY = j + y;
+
+                    if (currentX < 0 || currentX > (height - 1) || currentY < 0 || currentY > ())
+                }
+            }
         }
     }
     return;
