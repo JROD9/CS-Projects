@@ -23,7 +23,6 @@ int main(int argc, char *argv[])
     //storing blocks of 512 bytes in an array
     unsigned char buffer[512];
 
-
     //track number of images being created
     int count_image = 0;
 
