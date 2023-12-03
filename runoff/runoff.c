@@ -131,7 +131,8 @@ bool vote(int voter, int rank, string name)
     {
         if(candidate[i].name == voter)
         {
-            printf(candidate[i].name = voter)
+            printf(candidate[i].name = voter);
+            return true;
         }
     }
     return false;
