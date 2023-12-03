@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
  {
     printf("Usage: ./recover IMAGE\n");
     return 1;
-
+ }
     // open file for reading
     FILE *input_file = fopen(argv[1], "r");
 
@@ -51,11 +51,10 @@ int main(int argc, char *argv[])
     {
         fwrite(buffer, sizeof(char), 512, output_file);
     }
-}
     free(filename);
     fclose(output_file);
     fclose(input_file);
 
     return 0;
-}
 
+}
