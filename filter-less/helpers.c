@@ -71,7 +71,8 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     //comb through each row
     for(int i = 0; i < height; i++)
     {
-        for(int j = 0; j < width; j++)
+        //comb through each column
+        for(int j = 0; j < width / 2; j++)
         {
             RGBTRIPLE temp = image[i][j];
             image[i][j] = image[i][width - (j + 1)];
@@ -85,5 +86,15 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+    //comb through each row
+    for(int i = 0; i < height; i++)
+    {
+        //comb through each column
+        for(int j = 0; j < width / 2; j++)
+        {
+           
+
+        }
+    }
     return;
 }
