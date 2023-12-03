@@ -111,9 +111,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     int currentX = i + x;
                     int currentY = j + y;
 
-
-                    if (currentX < 0 || currentX > (height - 1) ||
-                    currentY < 0 || currentY > (width - 1))
+                    if (currentX < 0 || currentX > (height - 1) || currentY < 0 || currentY > (width - 1))
                     {
                         continue;
                     }
@@ -132,7 +130,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
         }
     }
-    
+
     // copy new pixels into original image
     for (int i = 0; i < height; i++)
     {
@@ -142,6 +140,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtGreen = temp[i][j].rgbtGreen;
             image[i][j].rgbtBlue = temp[i][j].rgbtBlue;
         }
-        return;
     }
+    return;
 }
