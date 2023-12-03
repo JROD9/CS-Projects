@@ -124,7 +124,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
                     counter++;
                 }
-                
+
                 // calculate the average of the neighboring pixels
                 temp[i][j].rgbtRed = round(totalRed / counter);
                 temp[i][j].rgbtGreen = round(totalGreen / counter);
@@ -132,12 +132,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
         }
     }
-    // copy new pixels
-
-    // comb through each row
+    
+    // copy new pixels into original image
     for (int i = 0; i < height; i++)
     {
-        // comb through each column
         for (int j = 0; j < width; j++)
         {
             image[i][j].rgbtRed = temp[i][j].rgbtRed;
