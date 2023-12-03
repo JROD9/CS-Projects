@@ -124,6 +124,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
                     counter++;
                 }
+                
                 // calculate the average of the neighboring pixels
                 temp[i][j].rgbtRed = round(totalRed / counter);
                 temp[i][j].rgbtGreen = round(totalGreen / counter);
