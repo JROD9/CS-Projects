@@ -26,7 +26,10 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Convert image to sepia
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
-    
+    for(int i = 0; i < height; i++)
+    {
+        for()
+    }
     return;
 }
 
