@@ -13,9 +13,7 @@ void colorize(int height, int width, RGBTRIPLE image[height][width])
             image[column][row].rgbtBlue == 0x00)
             {
                 image[column][row].rgbtRed = 0xff;
-                return 0;
             }
         }
     }
-    return 1;
 }
