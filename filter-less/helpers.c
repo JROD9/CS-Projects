@@ -87,11 +87,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     // create copy of image
     RGBTRIPLE temp[height][width];
-
-    // comb through each row
     for (int i = 0; i < height; i++)
     {
-        // comb through each column
         for (int j = 0; j < width; j++)
         {
             temp[i][j] = image[i][j];
