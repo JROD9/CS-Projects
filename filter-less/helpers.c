@@ -93,7 +93,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     for(int i = 0; i < height; i++)
     {
         //comb through each column
-        for(int j = 0; j < width / 2; j++)
+        for(int j = 0; j < width; j++)
         {
             temp[i][j] = image[i][j];
         }
