@@ -63,7 +63,7 @@ bool load(const char *dictionary)
     FILE *file = fopen(dictionary, "r");
     if (file == NULL)
 {
-    char* ("unable to open %s\n", dictionary);
+    printf("unable to open %s\n", dictionary);
     return false;
 }
     char word[LENGTH + 1];
