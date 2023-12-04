@@ -14,17 +14,8 @@ typedef struct node
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
-FILE *file = fopen(dictionary, "r");
-
-if (file == NULL)
-{
-    char *("unable to open %s\n", dictionary);
-    return false
-}
-
 
 // Hash table
-
 char word[LENGTH + 1];
 while(fscanf(file, "%s", word) != EOF)
 {
@@ -53,6 +44,12 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
+    FILE *file = fopen(dictionary, "r");
+    if (file == NULL)
+{
+    char *("unable to open %s\n", dictionary);
+    return false
+}
     return false;
 }
 
