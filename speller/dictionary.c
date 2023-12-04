@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <strings.h>
 
 #include "dictionary.h"
 
@@ -29,6 +30,18 @@ unsigned int hash_value;
 bool check(const char *word)
 {
     // TODO
+    hash_value = hash(word);
+    node *cursor = table[hash_value];
+
+    while(cursor != 0)
+    {
+        if(strcasecmp(word, cursor->word) == 0)
+        {
+            return true;
+        }
+        cursor = cursor -> next;
+    }
+    return false;
 }
 
 // Hashes word to a number
@@ -50,8 +63,8 @@ bool load(const char *dictionary)
     FILE *file = fopen(dictionary, "r");
     if (file == NULL)
 {
-    char *("unable to open %s\n", dictionary);
-    return false
+    char* ("unable to open %s\n", dictionary);
+    return false;
 }
     char word[LENGTH + 1];
     while(fscanf(file, "%s", word) != EOF)
@@ -87,5 +100,21 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    for (int i = 0; i < N; i++)
+    {
+        node *cursor = table[i];
+
+        while (cursor)
+        {
+            node *tmp = cursor;
+            cursor = cursor->next;
+            free(tmp);
+        }
+        if (cursor == NULL)
+        {
+            return true;
+        }
+    }
+
     return false;
 }
