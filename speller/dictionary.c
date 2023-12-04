@@ -2,9 +2,9 @@
 
 #include <ctype.h>
 #include <stdbool.h>
-#include <string.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <strings.h>
 
 #include "dictionary.h"
@@ -33,13 +33,13 @@ bool check(const char *word)
     hash_value = hash(word);
     node *cursor = table[hash_value];
 
-    while(cursor != 0)
+    while (cursor != 0)
     {
-        if(strcasecmp(word, cursor->word) == 0)
+        if (strcasecmp(word, cursor->word) == 0)
         {
             return true;
         }
-        cursor = cursor -> next;
+        cursor = cursor->next;
     }
     return false;
 }
@@ -62,24 +62,24 @@ bool load(const char *dictionary)
     // TODO
     FILE *file = fopen(dictionary, "r");
     if (file == NULL)
-{
-    printf("unable to open %s\n", dictionary);
-    return false;
-}
-    char word[LENGTH + 1];
-    while(fscanf(file, "%s", word) != EOF)
-{
-    node *n = malloc(sizeof(node));
-
-    if(n == NULL)
     {
+        printf("unable to open %s\n", dictionary);
         return false;
     }
-    strcpy (n -> word, word);
-    hash_value = hash(word);
-    n->next = table[hash_value];
-    table[hash_value] = n;
-    word_count++;
+    char word[LENGTH + 1];
+    while (fscanf(file, "%s", word) != EOF)
+    {
+        node *n = malloc(sizeof(node));
+
+        if (n == NULL)
+        {
+            return false;
+        }
+        strcpy(n->word, word);
+        hash_value = hash(word);
+        n->next = table[hash_value];
+        table[hash_value] = n;
+        word_count++;
     }
     fclose(file);
     return true;
@@ -89,7 +89,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    if(word_count > 0)
+    if (word_count > 0)
     {
         return word_count;
     }
