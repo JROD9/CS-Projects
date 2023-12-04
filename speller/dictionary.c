@@ -25,7 +25,7 @@ if (file == NULL)
 
 // Hash table
 
-cahr word[LENGTH + 1];
+char word[LENGTH + 1];
 while(fscanf(file, "%s", word) != EOF)
 {
     node *n = malloc(sizeof(node));
@@ -37,6 +37,8 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    strcpy (n -> word, word);
+    hash_value = hash(word);
     return false;
 }
 
