@@ -14,9 +14,18 @@ typedef struct node
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
+FILE *file = fopen(dictionary, "r");
+
+if (file == NULL)
+{
+    char *("unable to open %s\n", dictionary);
+    return false
+}
 
 
 // Hash table
+
+
 node *table[N];
 
 // Returns true if word is in dictionary, else false
