@@ -1,2 +1,2 @@
 for i in range(3):
-    printf("#", * 3)
+    print("#" * 3)
