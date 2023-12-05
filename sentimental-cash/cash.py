@@ -3,7 +3,7 @@
 from cs50 import get_float
 
 while True:
-    cent > 0:
+    cents > 0:
     break
 
 
