@@ -42,7 +42,7 @@ for i in range(0, len(teams), 2):
             winners.append(teams[i])
     else:
             winners.append(teams[i + 1])
-            return winners
+    return winners
 
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
