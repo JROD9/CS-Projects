@@ -31,6 +31,57 @@ def main():
         else:
             counts[winningTeam] = 1
 
+    import csv
+import sys
+import random
+import time  # Import the time module
+
+# Number of simulations to run
+N = 1000
+
+def main():
+    # Ensure correct usage
+    if len(sys.argv) != 2:
+        sys.exit("Usage: python tournament.py FILENAME")
+
+    teams = []
+
+    # Read teams into memory from file
+    filename = sys.argv[1]
+    with open(filename) as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            row["rating"] = int(row["rating"])
+            teams.append(row)
+
+    # Measure the start time
+    start_time = time.time()
+
+    counts = {}
+
+    # Simulate N tournaments and keep track of win counts
+    for i in range(N):
+        winningTeam = simulate_tournament(teams)
+        if winningTeam in counts:
+            counts[winningTeam] += 1
+        else:
+            counts[winningTeam] = 1
+
+    # Measure the end time
+    end_time = time.time()
+
+    # Print each team's chances of winning, according to simulation
+    for team in sorted(counts, key=lambda team: counts[team], reverse=True):
+        print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
+
+    # Calculate and print the total execution time
+    total_time = end_time - start_time
+    print(f"Total execution time: {total_time:.3f} seconds")
+
+    # Save the timing information to answers.txt
+    with open("answers.txt", "a") as answers_file:
+        answers_file.write(f"{N} simulations: {total_time:.3f}s\n")
+
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
         print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
