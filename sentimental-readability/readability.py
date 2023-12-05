@@ -14,7 +14,7 @@ for i in text:
     if i .isalpha():
         letters += 1
     elif i == " ":
-        words i += 1
+        words += 1
     elif i == "." or i == "!" or i == "?":
         sentences += 1
 
