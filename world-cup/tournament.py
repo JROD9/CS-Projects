@@ -1,5 +1,3 @@
-# Simulate a sports tournament
-
 import csv
 import sys
 import random
@@ -31,6 +29,7 @@ def main():
         else:
             counts[winner['team']] = 1
 
+
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
         print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
@@ -54,7 +53,8 @@ def simulate_round(teams):
             winners.append(teams[i])
         else:
             winners.append(teams[i + 1])
-        return winners
+
+    return winners
 
 
 def simulate_tournament(teams):
