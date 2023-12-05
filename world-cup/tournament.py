@@ -1,10 +1,11 @@
 import csv
 import sys
 import random
-import time  # Import the time module
+import time
 
 # Number of simulations to run
 N = 1000
+
 
 def main():
     # Ensure correct usage
@@ -48,10 +49,6 @@ def main():
     # Save the timing information to answers.txt
     with open("answers.txt", "a") as answers_file:
         answers_file.write(f"{N} simulations: {total_time:.3f}s\n")
-
-    # Print each team's chances of winning, according to simulation
-    for team in sorted(counts, key=lambda team: counts[team], reverse=True):
-        print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
 
 
 def simulate_game(team1, team2):
