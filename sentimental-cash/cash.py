@@ -8,7 +8,7 @@ while True:
         break
 
 
-cents = round(cents*100)
+cents = round(cents * 100)
 
 count = 0
 
