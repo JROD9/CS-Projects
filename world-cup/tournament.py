@@ -27,13 +27,13 @@ def main():
 
 winner_team = simulate_tournament(teams)
 
-if winner_team in counts:
+    if winner_team in counts:
 
-counts[winner_team] += 1
+        counts[winner_team] += 1
 
-else:
+    else:
 
-counts[winner_team] = 1
+        counts[winner_team] = 1
 
 
 
@@ -48,20 +48,11 @@ print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
 
 
 def simulate_game(team1, team2):
-
 """Simulate a game. Return True if team1 wins, False otherwise."""
-
 rating1 = team1["rating"]
-
 rating2 = team2["rating"]
-
 probability = 1 / (1 + 10 ** ((rating2 - rating1) / 600))
-
 return random.random() < probability
-
-
-
-
 
 def simulate_round(teams):
 
@@ -69,21 +60,13 @@ def simulate_round(teams):
 
 winners = []
 
+    for i in range(0, len(teams), 2):
+    if simulate_game(teams[i], teams[i + 1]):
+        winners.append(teams[i])
+    else:
+        winners.append(teams[i + 1])
 
-
-for i in range(0, len(teams), 2):
-
-if simulate_game(teams[i], teams[i + 1]):
-
-winners.append(teams[i])
-
-else:
-
-winners.append(teams[i + 1])
-
-
-
-return winners
+    return winners
 
 
 
