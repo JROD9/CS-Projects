@@ -50,6 +50,15 @@ def simulate_round(teams):
     winners = []
 
 
+    # Simulate games for all pairs of teams
+    for i in range(0, len(teams), 2):
+        if simulate_game(teams[i], teams[i + 1]):
+            winners.append(teams[i])
+        else:
+            winners.append(teams[i + 1])
+
+    return winners
+
 def simulate_tournament(teams):
 """Simulate a tournament. Return name of winning team."""
     while len(teams) > 1:
