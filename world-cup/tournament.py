@@ -35,7 +35,7 @@ def simulate_game(team1, team2):
     return random.random() < probability
 def simulate_round(teams):
     """Simulate a round. Return a list of winning teams."""
-    winners = []
+winners = []
 # Simulate games for all pairs of teams
 for i in range(0, len(teams), 2):
     if simulate_game(teams[i], teams[i + 1]):
