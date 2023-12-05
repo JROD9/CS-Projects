@@ -56,8 +56,7 @@ def simulate_round(teams):
             winners.append(teams[i])
         else:
             winners.append(teams[i + 1])
-
-    return winners
+        return winners
 
 
 def simulate_tournament(teams):
