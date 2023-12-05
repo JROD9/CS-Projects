@@ -26,4 +26,4 @@ if index < 1:
 elif index >= 16:
     print("grade 16+)"
 else:
-    print
+    print("Grade ", round(index))
