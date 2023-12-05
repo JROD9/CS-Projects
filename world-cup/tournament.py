@@ -58,12 +58,14 @@ def simulate_round(teams):
 
 
 def simulate_tournament(teams):
-    """Simulate a tournament. Return name of winning team."""
-    # TODO
-    while len(teams) != 1:
-        teams = simulate_round(teams)
-    winner = teams[0]
-    return winner["team"]
+# Simulate a tournament. Return name of winning team.
+teamleft =list()
+teamsLeft = teams
+while len(teamsLeft) != 1:
+    teamsLeft = simulate_round(teamsLeft)
+winner=teamsLeft[0]
+winnerValues = list(winner.values())
+return winnerValues[0]
 
 
 
