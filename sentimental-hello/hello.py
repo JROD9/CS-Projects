@@ -1,3 +1,3 @@
 # TODO
-s = inpput("What's your name? ")
-
+s = input("What's your name? ")
+print("Hello, " + s)
