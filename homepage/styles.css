@@ -26,16 +26,9 @@ a:hover {
     color: #fff !important;
 }
 
-.button {
-    border-radius: 1rem;
-    border: none;
-    background: radial-gradient(circle, rgba(120,167,97,1) 0%, rgba(67,112,63,1) 100%);
-    transition: 0.3s;
-}
-
 .button:hover {
     color: #fff !important;
-    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 14px 4px rgba(0,0,0,0.5);
     transform: scale(1.05);
 }
 
@@ -49,7 +42,7 @@ a:hover {
 }
 
 .main-title h1 {
-    font-size: 40px;
+    font-size: 35px;
 }
 
 /* Navigation Menu */
@@ -167,14 +160,12 @@ a:hover {
     font-size: 40px;
     font-weight: 500;
     letter-spacing: 0.5rem;
-    color: #78a761 !important;
+    color: #0000ff !important;
 }
 
 .footer .socials .footer-list li a:hover {
-    color: #a3d18c !important;
+    color: #ffffff !important;
 }
-
-/* About */
 
 /* Skills */
 
@@ -191,7 +182,7 @@ a:hover {
 
 .skills-page .card-img-top {
     padding: 1rem;
-    border-radius: 10%;
+    border-radius: 5%;
 }
 
 /* Portfolio */
