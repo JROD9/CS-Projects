@@ -53,7 +53,7 @@ a:hover {
 }
 
 .navbar-brand {
-    font-family: "Ubuntu", sans-serif;
+    font-family: "fantasy", sans-serif;
     font-size: 55px;
 }
 
@@ -114,19 +114,19 @@ a:hover {
 }
 
 .content .content-title {
-    position: relative;
+    position: left;
     margin: 0;
     padding-top: 9rem;
     padding-bottom: 2rem;
     font-family: "fantasy", serif;
     font-size: 49px;
-    font-weight: 599;
+    font-weight: 590;
     letter-spacing: 1px;
     color: #000;
 }
 
 .content .content-description {
-    position: relative;
+    position: left;
     font-size: 24px;
     color: #000;
 }
