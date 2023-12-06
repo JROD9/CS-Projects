@@ -1,4 +1,3 @@
-
 -- Query 1
 SELECT
   bakery_security_logs.activity,
@@ -44,20 +43,20 @@ WHERE
   AND duration < 60;
 
 -- Update Query 1
-UPDATE flights
-SET origin_airport_id = airports.city
-FROM airports
-WHERE flights.origin_airport_id = airports.id;
+UPDATE
+  flights
+SET
+  origin_airport_id = (SELECT city FROM airports WHERE airports.id = flights.origin_airport_id)
+WHERE
+  EXISTS (SELECT 1 FROM airports WHERE airports.id = flights.origin_airport_id);
 
 -- Update Query 2
 UPDATE
   flights
 SET
-  destination_airport_id = airports.city
-FROM
-  airports
+  destination_airport_id = (SELECT city FROM airports WHERE airports.id = flights.destination_airport_id)
 WHERE
-  flights.destination_airport_id = airports.id;
+  EXISTS (SELECT 1 FROM airports WHERE airports.id = flights.destination_airport_id);
 
 -- Query 4
 SELECT
