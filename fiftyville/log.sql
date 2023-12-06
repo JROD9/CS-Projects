@@ -38,14 +38,14 @@ WHERE year = 2021
 
 -- Update Query 1
 UPDATE flights
-SET origin_airport_id = (SELECT city FROM airports WHERE airports.id =
-flights.origin_airport_id)
+SET origin_airport_id = airports.city
+from airports
 WHERE flights.origin_airport_id = airports.id;
 
 -- Update Query 2
 UPDATE flights
-SET destination_airport_id = (SELECT city FROM airports WHERE airports.id =
-flights.destination_airport_id)
+SET destination_airport_id = airports.city
+from airports
 WHERE flights.destination_airport_id = airports.id;
 
 -- Query 4
