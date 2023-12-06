@@ -1,6 +1,6 @@
 select distinct name from people
 join stars on stars.person_id = people.id
-join movies on movies.id = stars.movie.id
+join movies on movies.id = stars.movie_id
 where movies.id in
 (select movies.id from movies
 join stars on stars.movie_id = movies.id
