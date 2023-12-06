@@ -186,7 +186,7 @@ a:hover {
     border-radius: 10%;
 }
 
-/* Portfolio */
+/* Future */
 
 .img-portfolio {
     height: 150px;
@@ -224,7 +224,7 @@ a:hover {
     transition: 0.3s;
     border-radius: 1rem;
     box-shadow: 0px 0px 50px 0px rgba(0,0,0,1);
-    background-color: rgba(104,104,104, 0.3);
+    background-color: rgba(255,255,255, 0.3);
 }
 
 .contact-container .contact:hover {
