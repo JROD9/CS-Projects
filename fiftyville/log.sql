@@ -32,7 +32,7 @@ WHERE year = 2021
 
 
 update flights
-set origins_airport_id = airports.city
+set origin_airport_id = airports.city
 from airports
 where flights.origin_airport_id = airports.id;
 
