@@ -30,4 +30,11 @@ WHERE year = 2021
   AND day = 28
   AND duration < 60;
 
+select id, hour, minute, origin_airport_id, destination_airport_id
+from flights
+where year = 2021
+and month = 7
+and day = 29
+order by hour asc
+limit 1;
 
