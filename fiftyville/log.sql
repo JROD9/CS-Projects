@@ -30,6 +30,19 @@ WHERE year = 2021
   AND day = 28
   AND duration < 60;
 
+
+update flights
+set origins_airport_id = airports.city
+from airports
+where flights.origin_airport_id = airports.id;
+
+
+update flights
+set destination_airport_id = airports.city
+from airports
+where flights.destination_airport_id = airports.id;
+
+
 select id, hour, minute, origin_airport_id, destination_airport_id
 from flights
 where year = 2021
