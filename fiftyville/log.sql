@@ -40,14 +40,13 @@ WHERE year = 2021
 UPDATE flights
 SET origin_airport_id = (SELECT city FROM airports WHERE airports.id =
 flights.origin_airport_id)
-WHERE EXISTS (SELECT 1 FROM airports WHERE airports.id = flights.origin_airport_id);
+WHERE flights.origin_airport_id = airports.id;
 
 -- Update Query 2
 UPDATE flights
 SET destination_airport_id = (SELECT city FROM airports WHERE airports.id =
 flights.destination_airport_id)
-WHERE EXISTS (SELECT 1 FROM airports WHERE airports.id =
-flights.destination_airport_id);
+WHERE flights.destination_airport_id = airports.id;
 
 -- Query 4
 SELECT id, hour, minute, origin_airport_id, destination_airport_id
