@@ -106,9 +106,10 @@ a:hover {
 /* Content */
 
 .content {
-    position: relative;
+    position: left;
     padding-top: 5rem;
     padding-bottom: 3rem;
+    padding-left: 10px;
     font-weight: 499;
 }
 
