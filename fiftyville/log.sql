@@ -15,4 +15,4 @@ and bakery_security_logs.month = 7
 and bakery_security_logs.day = 28
 and bakery_security_logs.hour = 10
 and bakery_security_logs.minute >= 15
-and bakery_security_logs <=25;
+and bakery_security_logs <= 25;
