@@ -132,7 +132,7 @@ a:hover {
     margin: 0;
     padding-top: 10rem;
     padding-bottom: 2rem;
-    font-family: "Ubuntu", serif;
+    font-family: "fantasy", serif;
     font-size: 50px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -187,7 +187,7 @@ a:hover {
 /* Skills */
 
 .skills-page .card {
-    background-color: rgba(104,104,104, 0.3);
+    background-color: rgb(255,255,255);
     margin-bottom: 1rem;
 }
 
