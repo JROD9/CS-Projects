@@ -20,8 +20,9 @@ WHERE atm_transactions.year = 2021
   AND atm_transactions.atm_location = "Leggett Street"
   AND atm_transactions.transaction_type = "withdraw";
 
-  select caller, caller_name, receiver, receiver_name from phone_calls
-  where year = 2021
-  and month = 7
-  and day = 28
-  and duration < 60;
+SELECT caller, caller_name, receiver, receiver_name
+FROM phone_calls
+WHERE year = 2021
+  AND month = 7
+  AND day = 28
+  AND duration < 60;
