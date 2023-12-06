@@ -141,24 +141,24 @@ a:hover {
     background: rgba(0,0,0,0.8);
     bottom: 0;
     width: 100%;
-    padding-top: 19px;
+    padding-top: 10px;
 }
 
 .footer .socials .footer-list {
     position: relative;
-    margin: 0 0 19px 0;
+    margin: 0 0 10px 0;
     display: inline-block;
 }
 
 .footer .socials .footer-list li {
     float: left;
-    margin-right: 9px;
+    margin-right: 5px;
 }
 
 .footer .socials .footer-list li a {
     position: relative;
     font-size: 39px;
-    font-weight: 499;
+    font-weight: 200;
     letter-spacing: 0.5rem;
     color: #0000ff !important;
 }
