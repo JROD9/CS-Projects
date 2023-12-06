@@ -138,10 +138,10 @@ a:hover {
 
 .footer {
     position: fixed; /* using fixed position to make the footer stay at the bottom */
-    background: rgba(0,0,0,0.8);
+    background: rgb(0,0,0);
     bottom: 0;
     width: 100%;
-    padding-top: 10px;
+    padding-top: 15px;
 }
 
 .footer .socials .footer-list {
