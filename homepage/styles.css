@@ -42,7 +42,7 @@ a:hover {
 }
 
 .main-title h1 {
-    font-size: 35px;
+    font-size: 34px;
 }
 
 /* Navigation Menu */
@@ -54,11 +54,11 @@ a:hover {
 
 .navbar-brand {
     font-family: "Ubuntu", sans-serif;
-    font-size: 60px;
+    font-size: 55px;
 }
 
 .first-letter {
-    font-weight: 700;
+    font-weight: 690;
     color: #0000ff !important;
 }
 
@@ -89,8 +89,8 @@ a:hover {
 .navbar ul li a {
     position: relative;
     display: block;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 19px;
+    font-weight: 599;
     line-height: 14px;
     letter-spacing: 1.6px;
 }
@@ -109,24 +109,24 @@ a:hover {
     position: relative;
     padding-top: 5rem;
     padding-bottom: 3rem;
-    font-weight: 500;
+    font-weight: 499;
 }
 
 .content .content-title {
     position: relative;
     margin: 0;
-    padding-top: 10rem;
+    padding-top: 9rem;
     padding-bottom: 2rem;
     font-family: "fantasy", serif;
-    font-size: 50px;
-    font-weight: 600;
+    font-size: 49px;
+    font-weight: 599;
     letter-spacing: 1px;
     color: #000;
 }
 
 .content .content-description {
     position: relative;
-    font-size: 25px;
+    font-size: 24px;
     color: #000;
 }
 
@@ -141,24 +141,24 @@ a:hover {
     background: rgba(0,0,0,0.8);
     bottom: 0;
     width: 100%;
-    padding-top: 20px;
+    padding-top: 19px;
 }
 
 .footer .socials .footer-list {
     position: relative;
-    margin: 0 0 20px 0;
+    margin: 0 0 19px 0;
     display: inline-block;
 }
 
 .footer .socials .footer-list li {
     float: left;
-    margin-right: 10px;
+    margin-right: 9px;
 }
 
 .footer .socials .footer-list li a {
     position: relative;
-    font-size: 40px;
-    font-weight: 500;
+    font-size: 39px;
+    font-weight: 499;
     letter-spacing: 0.5rem;
     color: #0000ff !important;
 }
