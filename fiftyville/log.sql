@@ -1,18 +1,19 @@
--- Query 1
-SELECT
-  bakery_security_logs.activity,
-  bakery_security_logs.license_plate,
-  people.name
-FROM
-  people
-  JOIN bakery_security_logs ON bakery_security_logs.license_plate = people.license_plate
-WHERE
-  bakery_security_logs.year = 2021
-  AND bakery_security_logs.month = 7
-  AND bakery_security_logs.day = 28
-  AND bakery_security_logs.hour = 10
-  AND bakery_security_logs.minute >= 15
-  AND bakery_security_logs.minute <= 25;
+select description from crime_scene_reports
+where year = 2021 and month = 7 and day = 28;
+
+select transcript from interviews
+where year = 2021 and month = 7 and day = 28 and transcript like "%bakery%";
+
+select bakery_security_logs.activity, bakery_security_logs.
+license_plate, people.name from people
+join bakery_security_logs on bakery_security_logs.license_plate =
+people.license_plate
+where bakery_security_logs.year = 2021
+and bakery_security_logs.month = 7
+and bakery_security_logs.day = 28
+and bakery_security_logs.hour = 10
+and bakery_security_logs.minute >= 15
+and bakery_security_logs <= 25;
 
 -- Query 2
 SELECT
