@@ -20,16 +20,10 @@ img {
     max-width: 100%;
 }
 
-/* Links */
-
-a {
-    
-}
-
 /* Buttons */
 
 a:hover {
-    color: #bbb !important;
+    color: #fff !important;
 }
 
 .button {
