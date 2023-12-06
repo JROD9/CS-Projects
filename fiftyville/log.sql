@@ -1,3 +1,5 @@
+
+
 SELECT bakery_security_logs.activity, bakery_security_logs.license_plate, people.name
 FROM people
 JOIN bakery_security_logs ON bakery_security_logs.license_plate = people.license_plate
@@ -8,12 +10,18 @@ WHERE bakery_security_logs.year = 2021
   AND bakery_security_logs.minute >= 15
   AND bakery_security_logs.minute <= 25;
 
-select people.name, atm_transaction.transaction_type from people
-join bank_accoounts on bank_accounts.person_id = people.id
-join atm_transactions on atm_transactions.account_number =
-bank_accounts.account_number
-where atm_transactions.year = 2021
-and atm_transactions.month = 7
-and atm_transactions.day = 28
-and atm_location = "Leggett Street"
-and atm_transactions.transcript_type = "withdraw";
+SELECT people.name, atm_transactions.transaction_type
+FROM people
+JOIN bank_accounts ON bank_accounts.person_id = people.id
+JOIN atm_transactions ON atm_transactions.account_number = bank_accounts.account_number
+WHERE atm_transactions.year = 2021
+  AND atm_transactions.month = 7
+  AND atm_transactions.day = 28
+  AND atm_transactions.atm_location = "Leggett Street"
+  AND atm_transactions.transaction_type = "withdraw";
+
+  select caller, caller_name, receiver, receiver_name from phone_calls
+  where year = 2021
+  and month = 7
+  and day = 28
+  and duration < 60;
