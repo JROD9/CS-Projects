@@ -56,3 +56,10 @@ AND month = 7
 AND day = 29
 ORDER BY hour ASC
 LIMIT 1;
+
+
+select flights.destination_airport_id, name, phone_number, license_plate from people
+join passengers on people.passengers_number = passengers.passport_number
+where by flight.hour asc;
+
+select name from people
