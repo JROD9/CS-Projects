@@ -43,34 +43,23 @@ WHERE
   AND duration < 60;
 
 -- Update Query 1
-UPDATE
-  flights
-SET
-  origin_airport_id = (SELECT city FROM airports WHERE airports.id = flights.origin_airport_id)
-WHERE
-  EXISTS (SELECT 1 FROM airports WHERE airports.id = flights.origin_airport_id);
+UPDATE flights
+SET origin_airport_id = (SELECT city FROM airports WHERE airports.id =
+flights.origin_airport_id)
+WHERE EXISTS (SELECT 1 FROM airports WHERE airports.id = flights.origin_airport_id);
 
 -- Update Query 2
-UPDATE
-  flights
-SET
-  destination_airport_id = (SELECT city FROM airports WHERE airports.id = flights.destination_airport_id)
-WHERE
-  EXISTS (SELECT 1 FROM airports WHERE airports.id = flights.destination_airport_id);
+UPDATE flights
+SET destination_airport_id = (SELECT city FROM airports WHERE airports.id =
+flights.destination_airport_id)
+WHERE EXISTS (SELECT 1 FROM airports WHERE airports.id =
+flights.destination_airport_id);
 
 -- Query 4
-SELECT
-  id,
-  hour,
-  minute,
-  origin_airport_id,
-  destination_airport_id
-FROM
-  flights
-WHERE
-  year = 2021
-  AND month = 7
-  AND day = 29
-ORDER BY
-  hour ASC
+SELECT id, hour, minute, origin_airport_id, destination_airport_id
+FROM flights
+WHERE year = 2021
+AND month = 7
+AND day = 29
+ORDER BY hour ASC
 LIMIT 1;
