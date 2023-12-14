@@ -1,5 +1,3 @@
-import os
-
 from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 
@@ -26,7 +24,7 @@ def after_request(response):
 def index():
     if request.method == "POST":
 
-        # TODO: Add the user's entry into the database
+        # Add the user's entry into the database
         first_name = request.form.get("first_name")
         last_name = request.form.get("last_name")
         day = request.form.get("day")
