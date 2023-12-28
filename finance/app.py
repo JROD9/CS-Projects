@@ -223,28 +223,6 @@ def register():
         return redirect(url_for("index"))
     else:
         return render_template("register.html")
-        # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-
-        # Ensure username does not already exist
-        if len(rows) != 0:
-            flash("Username already exists", "error")
-            return render_template("register.html")
-
-        # Insert new user into the database
-        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)",
-                   request.form.get("username"), generate_password_hash(request.form.get("password")))
-
-        # Query database for the newly inserted user
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-
-        # Remember which user has logged in session["user_id"] - assuming "id" is the column name in the users table
-        session["user_id"] = rows[0]["id"]
-
-        flash("Registered successfully!", "success")
-        return redirect(url_for("index"))
-    else:
-        return render_template("register.html")
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
