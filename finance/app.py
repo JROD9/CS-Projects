@@ -183,46 +183,35 @@ def register():
     if request.method == "POST":
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("Must provide username", 400)
+            flash("Must provide username", "error")
+            return render_template("register.html")
 
         # Ensure password was submitted
         elif not request.form.get("password"):
-            return apology("Must provide password", 400)
+            flash("Must provide password", "error")
+            return render_template("register.html")
 
         # Ensure password confirmation was submitted
         elif not request.form.get("confirmation"):
-            return apology("Must confirm password", 400)
+            flash("Must confirm password", "error")
+            return render_template("register.html")
 
         # Ensure password and confirmation match
         elif request.form.get("password") != request.form.get("confirmation"):
-            return apology("Passwords do not match", 400)
+            flash("Passwords do not match", "error")
+            return render_template("register.html")
 
-        try:
-            # Start a transaction
-            with db.execute("BEGIN"):
-                # Query database for username
-                rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        # Query database for username
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
-                # Ensure username does not already exist
-                if len(rows) != 0:
-                    return apology("Username already exists", 400)
+        # Ensure username does not already exist
+        if len(rows) != 0:
+            flash("Username already exists", "error")
+            return render_template("register.html")
 
-                # Insert new user into the database
-                db.execute("INSERT INTO users (username, hash) VALUES (?, ?)",
-                           request.form.get("username"), generate_password_hash(request.form.get("password")))
-
-                # Commit the transaction
-                db.execute("COMMIT")
-
-        except Exception as e:
-            # Log the exception for debugging
-            print(f"Error during registration: {e}")
-
-            # Rollback the transaction in case of an error
-            db.execute("ROLLBACK")
-
-            # Return an apology to the user
-            return apology("Error during registration", 500)
+        # Insert new user into the database
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)",
+                   request.form.get("username"), generate_password_hash(request.form.get("password")))
 
         # Query database for the newly inserted user
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
@@ -230,7 +219,8 @@ def register():
         # Remember which user has logged in session["user_id"] - assuming "id" is the column name in the users table
         session["user_id"] = rows[0]["id"]
 
-        return redirect("/")
+        flash("Registered successfully!", "success")
+        return redirect(url_for("index"))
     else:
         return render_template("register.html")
 
