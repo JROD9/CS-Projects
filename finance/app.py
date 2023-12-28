@@ -187,41 +187,42 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
-    session.clear()
+   session.clear()
 
     if request.method == "POST":
-        if not request.form.get("username")
-        return apology("must provide username", 400)
+        # Ensure username was submitted
+        if not request.form.get("username"):
+            return apology("Must provide username", 400)
 
-    # Ensure password was submitted
-    elif not request. form.get ("password"):
-        return apology ("must provide password", 400)
+        # Ensure password was submitted
+        elif not request.form.get("password"):
+            return apology("Must provide password", 400)
 
-    #Ensure password confirmation was submitted
-    elif not request.form.get("confirmation"):
-        return apology ("must confirm password", 400)
+        # Ensure password confirmation was submitted
+        elif not request.form.get("confirmation"):
+            return apology("Must confirm password", 400)
 
-    #Ensure password and confirmation match
-    elif request.form.get ("password") != request.form.get("confirmation"):
-        return apology ("passwords do not match", 400)
+        # Ensure password and confirmation match
+        elif request.form.get("password") != request.form.get("confirmation"):
+            return apology("Passwords do not match", 400)
 
-    # Query database for username
-    rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        # Query database for username
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
-    # Ensure username does not already exist
-    if len(rows) != 0:
-    return apology("username already exists", 400)
+        # Ensure username does not already exist
+        if len(rows) != 0:
+            return apology("Username already exists", 400)
 
-    # Insert new user into database
-    db.execute("INSERT INTO users (username, hash) VALUES(?, ?)",
-                request.form.get("username"), generate_password_hash(request.form.get("password")))
+        # Insert new user into the database
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)",
+                   request.form.get("username"), generate_password_hash(request.form.get("password")))
 
-    # Query database for newly inserted user
-    rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        # Query database for the newly inserted user
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
-    # Remember which user has logged in session["user_1d"] - rows[e]["id"]
+        # Remember which user has logged in session["user_id"] - assuming "id" is the column name in the users table
+        session["user_id"] = rows[0]["id"]
 
-    #query db for username
         return redirect("/")
     else:
         return render_template("register.html")
