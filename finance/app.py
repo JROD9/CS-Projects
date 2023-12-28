@@ -193,29 +193,19 @@ def register():
         if not request.form.get("username")
         return apology("must provide username", 400)
 
-    * Ensure password was submitted elif not request. form.get ("password"): return apology ("must provide password", 400)
-" Ensure password confirmation was submitted elf not request.form.get ("confirmation"):
-return apology ("must confirm password", 400)
-* Ensure password and confirmation match elf request.form.get ("password") I- request. form.get ("confirmation"): return apology ("passwords do not match", 400)
-        if not name or db.execute("SELECT * FROM users WHERE username = ?", name):
-            return apology("username is not available")
+    # Ensure password was submitted
+    elif not request. form.get ("password"):
+        return apology ("must provide password", 400)
 
-        password = request.form.get("password")
-        if not password:
-            return apology("missing password")
+    #Ensure password confirmation was submitted
+    elif not request.form.get("confirmation"):
+        return apology ("must confirm password", 400)
 
-        confirmation = request.form.get("confirmation")
-        if not confirmation:
-            return apology("missing confirmation")
+    #Ensure password and confirmation match
+    elif request.form.get ("password") != request.form.get("confirmation"):
+        return apology ("passwords do not match", 400)
 
-        if password != confirmation:
-            return apology("passwords don't match")
-
-        db.execute(
-            "INSERT INTO users (username, hash) VALUES (?, ?)",
-            name,
-            generate_password_hash(password),
-        )
+    #query db for username 
         return redirect("/")
     else:
         return render_template("register.html")
