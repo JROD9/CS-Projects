@@ -187,8 +187,13 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
+    session.clear()
+
     if request.method == "POST":
-        name = request.form.get("username")
+        if not request.form.get("username")
+        return apology("must provide username", 400)
+
+    elif
         if not name or db.execute("SELECT * FROM users WHERE username = ?", name):
             return apology("username is not available")
 
