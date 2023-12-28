@@ -193,7 +193,10 @@ def register():
         if not request.form.get("username")
         return apology("must provide username", 400)
 
-    elif
+    * Ensure password was submitted elif not request. form.get ("password"): return apology ("must provide password", 400)
+" Ensure password confirmation was submitted elf not request.form.get ("confirmation"):
+return apology ("must confirm password", 400)
+* Ensure password and confirmation match elf request.form.get ("password") I- request. form.get ("confirmation"): return apology ("passwords do not match", 400)
         if not name or db.execute("SELECT * FROM users WHERE username = ?", name):
             return apology("username is not available")
 
