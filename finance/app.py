@@ -217,12 +217,9 @@ def register():
                 request.form.get("username"), generate_password_hash(request.form.get("password")))
 
     # Query database for newly inserted user
-rows - db.execute("SELECT * FROM users WHERE username a?",
-request.form-get ("username"))
-215
-216
-217
-• Remember which user has logged in session["user_1d"] - rows[e]["id"]
+    rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+
+    # Remember which user has logged in session["user_1d"] - rows[e]["id"]
 
     #query db for username
         return redirect("/")
