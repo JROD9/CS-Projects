@@ -7,20 +7,20 @@ int main()
      const int numSalsas = 5;
 
 
-    std::string salsaNames[numSalsas] = {"mild", "medium", "sweet", "hot", "zesty"};
-    int jarsSold[numSalsas];
+    std::string salsaNames[numSalsas] = {"apples", "Bananas", "peaches", "watermelons", "strawberries"};
+    int fruitsold[numSalsas];
 
 
     for (int i = 0; i < numSalsas; ++i) {
         do {
-            std::cout << "Enter number of jars sold for " << salsaNames[i] << ": ";
-            std::cin >> jarsSold[i];
+            std::cout << "Enter number of fruit sold for " << salsaNames[i] << ": ";
+            std::cin >> fruitsold[i];
 
 
-            if (jarsSold[i] < 0) {
-                std::cout << "Please enter a non-negative value for jars sold." << std::endl;
+            if (fruitsold[i] < 0) {
+                std::cout << "Please enter a non-negative value for fruit sold." << std::endl;
             }
-        } while (jarsSold[i] < 0);
+        } while (fruitsold[i] < 0);
     }
 
 
@@ -28,13 +28,13 @@ int main()
     int highestIndex = 0, lowestIndex = 0;
 
     for (int i = 0; i < numSalsas; ++i) {
-        totalSales += jarsSold[i];
+        totalSales += fruitsold[i];
 
-        if (jarsSold[i] > jarsSold[highestIndex]) {
+        if (fruitsold[i] > fruitsold[highestIndex]) {
             highestIndex = i;
         }
 
-        if (jarsSold[i] < jarsSold[lowestIndex]) {
+        if (fruitsold[i] < fruitsold[lowestIndex]) {
             lowestIndex = i;
         }
     }
@@ -43,13 +43,13 @@ int main()
     std::cout << "\nSales Report\n";
     std::cout << "-----------------\n";
     for (int i = 0; i < numSalsas; ++i) {
-        std::cout << salsaNames[i] << ": " << jarsSold[i] << " jars\n";
+        std::cout << salsaNames[i] << ": " << fruitsold[i] << " fruit\n";
     }
 
     std::cout << "-----------------\n";
-    std::cout << "Total Sales: " << totalSales << " jars\n";
-    std::cout << "Highest Selling Product: " << salsaNames[highestIndex] << " (" << jarsSold[highestIndex] << " jars)\n";
-    std::cout << "Lowest Selling Product: " << salsaNames[lowestIndex] << " (" << jarsSold[lowestIndex] << " jars)\n";
+    std::cout << "Total Sales: " << totalSales << " fruit\n";
+    std::cout << "Highest Selling Product: " << salsaNames[highestIndex] << " (" << fruitsold[highestIndex] << " fruit)\n";
+    std::cout << "Lowest Selling Product: " << salsaNames[lowestIndex] << " (" << fruitsold[lowestIndex] << " fruit)\n";
 
     return 0;
 }
