@@ -216,4 +216,31 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    return apology("TODO")
+    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0",
+                        user_id=session["user_id"])
+
+    #if the user submits the form
+    if request.method == "POST':
+    symbol = request.form.get("symbol").upper()
+    shares = request.form.get("shares")
+    if not symbol:
+        return apology("must provide symbol")
+    elif not shares or not shares.isdigit() or int(shares) <= 0:
+        return apology("must provide a positive integer number of shares")
+    else:
+        shares = int(shares)
+
+    for stock in stocks:
+        if stock["symbol"] == symbol:
+            if stock["total_shares"] < shares:
+                return apology("not enough shares")
+            else:
+                #get quote
+                quote = lookup(symbol)
+                if quote is None:
+                    return apology("symbol not found")
+                price = quote["price"]
+                total_sale = shares * price
+
+                #update users table
+
