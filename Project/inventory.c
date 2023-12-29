@@ -1,30 +1,34 @@
-#include <iostream>
-#include <iomanip>
-#include <string>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int main() {
-    const int numSalsas = 5;
+#define NUM_SALSAS 5
 
-    std::string salsaNames[numSalsas] = {"apples", "bananas", "peaches", "watermelons", "strawberries"};
-    int fruitsold[numSalsas];
-    double prices[numSalsas] = {1.5, 2.0, 1.8, 3.0, 2.5};  // Prices for each fruit
-
-    for (int i = 0; i < numSalsas; ++i) {
+void getSales(int *fruitsold, const char **salsaNames) {
+    for (int i = 0; i < NUM_SALSAS; ++i) {
         do {
-            std::cout << "Enter number of fruits sold for " << salsaNames[i] << ": ";
-            std::cin >> fruitsold[i];
+            printf("Enter number of fruits sold for %s: ", salsaNames[i]);
+            scanf("%d", &fruitsold[i]);
 
             if (fruitsold[i] < 0) {
-                std::cout << "Please enter a non-negative value for fruits sold." << std::endl;
+                printf("Please enter a non-negative value for fruits sold.\n");
             }
         } while (fruitsold[i] < 0);
     }
+}
+
+int main() {
+    const char *salsaNames[NUM_SALSAS] = {"apples", "bananas", "peaches", "watermelons", "strawberries"};
+    int fruitsold[NUM_SALSAS];
+    double prices[NUM_SALSAS] = {1.5, 2.0, 1.8, 3.0, 2.5}; // Prices for each fruit
+
+    getSales(fruitsold, salsaNames);
 
     int totalSales = 0;
     double totalRevenue = 0.0;
     int highestIndex = 0, lowestIndex = 0;
 
-    for (int i = 0; i < numSalsas; ++i) {
+    for (int i = 0; i < NUM_SALSAS; ++i) {
         totalSales += fruitsold[i];
         double revenue = fruitsold[i] * prices[i];
         totalRevenue += revenue;
@@ -38,20 +42,19 @@ int main() {
         }
     }
 
-    std::cout << "\nSales Report\n";
-    std::cout << "-----------------\n";
-    for (int i = 0; i < numSalsas; ++i) {
+    printf("\nSales Report\n");
+    printf("-----------------\n");
+    for (int i = 0; i < NUM_SALSAS; ++i) {
         double revenue = fruitsold[i] * prices[i];
-        double profit = revenue - (fruitsold[i] * 0.3);  // Assuming a cost of 70% of the price
-        std::cout << std::fixed << std::setprecision(2);
-        std::cout << salsaNames[i] << ": " << fruitsold[i] << " fruits | Revenue: $" << revenue << " | Profit: $" << profit << "\n";
+        double profit = revenue - (fruitsold[i] * 0.5); // Assuming a cost of 50% of the price
+        printf("%s: %d fruits | Revenue: $%.2f | Profit: $%.2f\n", salsaNames[i], fruitsold[i], revenue, profit);
     }
 
-    std::cout << "-----------------\n";
-    std::cout << "Total Sales: " << totalSales << " fruits\n";
-    std::cout << "Total Revenue: $" << totalRevenue << "\n";
-    std::cout << "Highest Selling Product: " << salsaNames[highestIndex] << " (" << fruitsold[highestIndex] << " fruits)\n";
-    std::cout << "Lowest Selling Product: " << salsaNames[lowestIndex] << " (" << fruitsold[lowestIndex] << " fruits)\n";
+    printf("-----------------\n");
+    printf("Total Sales: %d fruits\n", totalSales);
+    printf("Total Revenue: $%.2f\n", totalRevenue);
+    printf("Highest Selling Product: %s (%d fruits)\n", salsaNames[highestIndex], fruitsold[highestIndex]);
+    printf("Lowest Selling Product: %s (%d fruits)\n", salsaNames[lowestIndex], fruitsold[lowestIndex]);
 
     return 0;
 }
