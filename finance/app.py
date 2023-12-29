@@ -46,7 +46,30 @@ def buy():
         symbol = request.form.get("symbol").upper()
         shares = request.form.get("shares")
         if not symbol:
-            return apology
+            return apology("must provide symbol")
+        elif not shares or not shares.isdigit() or int(shares) <= 0:
+            return apology("must provide a posotive integer number of shares")
+
+        quote = lookup(symbol)
+        if quote is None:
+            return apology("symbol not found")
+
+        price = quote["price"]
+        total_cost = int(shares) * price
+        cash = db.execute("SELECT cash from users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
+
+        if cash < total_cost:
+            return apology("not enough cash")
+
+        #update users table
+        db.execute("UPDATE users SET cash = cash - :total_cost WHERE id = :user_id",
+                   total_cost=total_cost, user_id=session["user_id"])
+
+        #add the purchase to the history table
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:iser_id, :symbol, ))
+
+        flash(f"bought {shares} shares of {symbol} for {usd(total_cost)}!")
+        return redirect("/")
 
 
 @app.route("/history")
