@@ -98,7 +98,11 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    
+    #query db fro users transactions ordered by most recent first
+    transactions = db.execute(
+        "SELECT * FROM reansactions WHERE user_id = :user_id ORDER BY timestamp DESC", user_id=session["user_id"])
+
+    #render 
 
 
 @app.route("/login", methods=["GET", "POST"])
