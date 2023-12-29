@@ -35,12 +35,16 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-     # Get user's stocks and shares
-    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0",
-                        user_id=session["user_id"])
+    # Get user's stocks and shares
+    stocks = db.execute(
+        "SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0",
+        user_id=session["user_id"],
+    )
 
     # Get user's cash balance
-    cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
+    cash = db.execute(
+        "SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"]
+    )[0]["cash"]
 
     # Initialize variables for total values
     total_value = cash
@@ -55,7 +59,13 @@ def index():
         total_value += stock["value"]
         grand_total += stock["value"]
 
-    return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value, grand_total=grand_total)
+    return render_template(
+        "index.html",
+        stocks=stocks,
+        cash=cash,
+        total_value=total_value,
+        grand_total=grand_total,
+    )
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -76,18 +86,28 @@ def buy():
 
         price = quote["price"]
         total_cost = int(shares) * price
-        cash = db.execute("SELECT cash from users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
+        cash = db.execute(
+            "SELECT cash from users WHERE id = :user_id", user_id=session["user_id"]
+        )[0]["cash"]
 
         if cash < total_cost:
             return apology("not enough cash")
 
-        #update users table
-        db.execute("UPDATE users SET cash = cash - :total_cost WHERE id = :user_id",
-                   total_cost=total_cost, user_id=session["user_id"])
+        # update users table
+        db.execute(
+            "UPDATE users SET cash = cash - :total_cost WHERE id = :user_id",
+            total_cost=total_cost,
+            user_id=session["user_id"],
+        )
 
-        #add the purchase to the history table
-        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
-                   user_id=session["user_id"], symbol=symbol, shares=shares, price=price)
+        # add the purchase to the history table
+        db.execute(
+            "INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
+            user_id=session["user_id"],
+            symbol=symbol,
+            shares=shares,
+            price=price,
+        )
 
         flash(f"Bought {shares} shares of {symbol} for {usd(total_cost)}!")
         return redirect("/")
@@ -99,11 +119,13 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    #query db fro users transactions ordered by most recent first
+    # query db fro users transactions ordered by most recent first
     transactions = db.execute(
-        "SELECT * FROM reansactions WHERE user_id = :user_id ORDER BY timestamp DESC", user_id=session["user_id"])
+        "SELECT * FROM reansactions WHERE user_id = :user_id ORDER BY timestamp DESC",
+        user_id=session["user_id"],
+    )
 
-    #render history page with transcript
+    # render history page with transcript
     return render_template("history.html", transactions=transactions)
 
 
@@ -116,7 +138,6 @@ def login():
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
-
         # Ensure username was submitted
         if not request.form.get("username"):
             return apology("must provide username", 403)
@@ -126,10 +147,14 @@ def login():
             return apology("must provide password", 403)
 
         # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        rows = db.execute(
+            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+        )
 
         # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
+        if len(rows) != 1 or not check_password_hash(
+            rows[0]["hash"], request.form.get("password")
+        ):
             return apology("invalid username and/or password", 403)
 
         # Remember which user has logged in
@@ -171,49 +196,55 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
-    #Forget any user_id
+    # Forget any user_id
     session.clear()
 
-    #user reched route via POST (as by submitting a form via post)
+    # user reched route via POST (as by submitting a form via post)
     if request.method == "POST":
-
-        #ensure username was submitted
+        # ensure username was submitted
         if not request.form.get("username"):
             return apology("must provide password", 400)
 
-        #ensure password was submitted
+        # ensure password was submitted
         elif not request.form.get("password"):
             return apology("must provide password", 400)
 
-        #ensure password confirmation after
+        # ensure password confirmation after
         elif not request.form.get("confirmation"):
             return apology("must confirm password", 400)
 
-        #ensure password and confimation match
+        # ensure password and confimation match
         elif request.form.get("password") != request.form.get("confirmation"):
             return apology("passwords do not match", 400)
 
-        #query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        # query database for username
+        rows = db.execute(
+            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+        )
 
-        #ensure username does not already exist
+        # ensure username does not already exist
         if len(rows) != 0:
             return apology("username already exist", 400)
 
-        #insert new user into db
-        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)",
-                   request.form.get("username"), generate_password_hash(request.form.get("password")))
+        # insert new user into db
+        db.execute(
+            "INSERT INTO users (username, hash) VALUES(?, ?)",
+            request.form.get("username"),
+            generate_password_hash(request.form.get("password")),
+        )
 
-        #query db for new user
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        # query db for new user
+        rows = db.execute(
+            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+        )
 
-        #remember which user has logged in
+        # remember which user has logged in
         session["user_id"] = rows[0]["id"]
 
-        #redirect user to homepage
+        # redirect user to homepage
         return redirect("/")
 
-    #user reach route via get by clicking link or via redirect
+    # user reach route via get by clicking link or via redirect
     else:
         return render_template("register.html")
 
@@ -222,10 +253,12 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0",
-                        user_id=session["user_id"])
+    stocks = db.execute(
+        "SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0",
+        user_id=session["user_id"],
+    )
 
-    #if the user submits the form
+    # if the user submits the form
     if request.method == "POST":
         symbol = request.form.get("symbol").upper()
         shares = request.form.get("shares")
@@ -238,30 +271,37 @@ def sell():
 
         for stock in stocks:
             if stock["symbol"] == symbol:
-              if stock["total_shares"] < shares:
-                return apology("not enough shares")
+                if stock["total_shares"] < shares:
+                    return apology("not enough shares")
             else:
-                #get quote
+                # get quote
                 quote = lookup(symbol)
                 if quote is None:
                     return apology("symbol not found")
                 price = quote["price"]
                 total_sale = shares * price
 
-                #update users table
-                db.execute("UPDATE users SET cash = cash + :total_sale WHERE id = :user_id",
-                           total_sale=total_sale, user_id=session["user_id"])
+                # update users table
+                db.execute(
+                    "UPDATE users SET cash = cash + :total_sale WHERE id = :user_id",
+                    total_sale=total_sale,
+                    user_id=session["user_id"],
+                )
 
-                #add the sale to the history table
-                db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
-                           user_id=session["user_id"], symbool=symbol, shares=shares, price=price)
+                # add the sale to the history table
+                db.execute(
+                    "INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
+                    user_id=session["user_id"],
+                    symbool=symbol,
+                    shares=shares,
+                    price=price,
+                )
 
                 flash(f"sold {shares} shares of {symbol} for {usd(total_sale)}!")
                 return redirect("/")
 
         return apology("symbol not found")
 
-    #if the user visits the page
+    # if the user visits the page
     else:
         return render_template("sell.html", stocks=stocks)
-
