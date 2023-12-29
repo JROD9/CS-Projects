@@ -66,7 +66,7 @@ def buy():
                    total_cost=total_cost, user_id=session["user_id"])
 
         #add the purchase to the history table
-        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:iser_id, :symbol, :shares, :price)",
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
                    user_id=session["user_id"], symbol=symbol, shares=shares, price=price)
 
         flash(f"bought {shares} shares of {symbol} for {usd(total_cost)}!")
