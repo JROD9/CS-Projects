@@ -102,7 +102,8 @@ def history():
     transactions = db.execute(
         "SELECT * FROM reansactions WHERE user_id = :user_id ORDER BY timestamp DESC", user_id=session["user_id"])
 
-    #render 
+    #render history page with transcript
+    return render_template("history.html", transactions=transactions)
 
 
 @app.route("/login", methods=["GET", "POST"])
