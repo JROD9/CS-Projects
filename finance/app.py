@@ -221,18 +221,18 @@ def sell():
 
     #if the user submits the form
     if request.method == "POST":
-    symbol = request.form.get("symbol").upper()
-    shares = request.form.get("shares")
-    if not symbol:
-        return apology("must provide symbol")
-    elif not shares or not shares.isdigit() or int(shares) <= 0:
-        return apology("must provide a positive integer number of shares")
-    else:
-        shares = int(shares)
+        symbol = request.form.get("symbol").upper()
+        shares = request.form.get("shares")
+        if not symbol:
+            return apology("must provide symbol")
+        elif not shares or not shares.isdigit() or int(shares) <= 0:
+            return apology("must provide a positive integer number of shares")
+        else:
+            shares = int(shares)
 
-    for stock in stocks:
-        if stock["symbol"] == symbol:
-            if stock["total_shares"] < shares:
+        for stock in stocks:
+            if stock["symbol"] == symbol:
+              if stock["total_shares"] < shares:
                 return apology("not enough shares")
             else:
                 #get quote
