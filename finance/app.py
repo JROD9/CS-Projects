@@ -220,7 +220,7 @@ def sell():
                         user_id=session["user_id"])
 
     #if the user submits the form
-    if request.method == "POST':
+    if request.method == "POST":
     symbol = request.form.get("symbol").upper()
     shares = request.form.get("shares")
     if not symbol:
