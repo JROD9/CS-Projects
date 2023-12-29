@@ -42,7 +42,7 @@ int main() {
     std::cout << "-----------------\n";
     for (int i = 0; i < numSalsas; ++i) {
         double revenue = fruitsold[i] * prices[i];
-        double profit = revenue - (fruitsold[i] * 0.5);  // Assuming a cost of 50% of the price
+        double profit = revenue - (fruitsold[i] * 0.3);  // Assuming a cost of 70% of the price
         std::cout << std::fixed << std::setprecision(2);
         std::cout << salsaNames[i] << ": " << fruitsold[i] << " fruits | Revenue: $" << revenue << " | Profit: $" << profit << "\n";
     }
