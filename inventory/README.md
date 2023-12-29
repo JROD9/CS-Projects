@@ -1,5 +1,5 @@
 # YOUR PROJECT TITLE
-#### Video Demo:  <URL >
+#### Video Demo:  <URL https://youtu.be/hgSxgPJRQWc>
 #### Description:
 Jordan Rodriguez
 The command-line application developed in C is a sophisticated tool designed to streamline
