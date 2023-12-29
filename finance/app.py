@@ -60,11 +60,6 @@ def index():
             grand_total += stock["value"]
 
         return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value, grand_total=grand_total)
-except Exception as e:
-        # Log the exception or print it for debugging
-        print(f"Error: {e}")
-        flash("An error occurred while fetching data.", "error")
-        return render_template("index.html", stocks=[], cash=0, total_value=0, grand_total=0)
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
