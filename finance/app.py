@@ -35,28 +35,36 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    #get user's stocks and shares
-    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0",
-                        user_id=session["user_id"])
+    stocks = db.execute(
+            "SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0",
+            user_id=session["user_id"]
+        )
 
-    #get users cash balence
-    cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
+        # get users cash balance
+        cash = db.execute(
+            "SELECT cash FROM users WHERE id = :user_id",
+            user_id=session["user_id"]
+        )[0]["cash"]
 
-    #initialize variables for tot values
-    total_value = cash
-    grand_total = cash
+        # initialize variables for total values
+        total_value = cash
+        grand_total = cash
 
-    #iterate over stocks and add price and tot value
-    for stock in stocks:
-        quote = lookup(stock["symbol"])
-        stock["name"] = quote["name"]
-        stock["price"] = quote["price"]
-        stock["value"] = stock["price"] * stock["total_shares"]
-        total_value += stock["value"]
-        grand_total += stock["value"]
+        # iterate over stocks and add price and total value
+        for stock in stocks:
+            quote = lookup(stock["symbol"])
+            stock["name"] = quote["name"]
+            stock["price"] = quote["price"]
+            stock["value"] = stock["price"] * stock["total_shares"]
+            total_value += stock["value"]
+            grand_total += stock["value"]
 
-    return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value, grand_total=grand_total)
-
+        return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value, grand_total=grand_total)
+except Exception as e:
+        # Log the exception or print it for debugging
+        print(f"Error: {e}")
+        flash("An error occurred while fetching data.", "error")
+        return render_template("index.html", stocks=[], cash=0, total_value=0, grand_total=0)
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
