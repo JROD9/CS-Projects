@@ -109,7 +109,51 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
-    return apology("TODO")
+    #Forget any user_id
+    session.clear()
+
+    #user reched route via POST (as by submitting a form via post)
+    if request.method == "POST":
+
+        #ensure username was submitted
+        if not request.form.get("username"):
+            return apology("must provide password", 400)
+
+        #ensure password was submitted
+        elif not request.form.get("password"):
+            return apology("must provide password", 400)
+
+        #ensure password confirmation after
+        elif not request.form.get("confirmation"):
+            return apology("must confirm password", 400)
+
+        #ensure password and confimation match
+        elif request.form.get("password") != request.form.get("confirmation"):
+            return apology("passwords do not match", 400)
+
+        #query database for username
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+
+        #ensure username does not already exist
+        if len(rows) != 0:
+            return apology("username already exist", 400)
+
+        #insert new user into db
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)",
+                   request.form.get("username"), generate_password_hash(request.form.get("password")))
+
+        #query db for new user
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+
+        #remember which user has logged in
+        session["user_id"] = rows[0]["id"]
+
+        #redirect user to homepage
+        return redirect("/")
+
+    #user reach route via get by clicking link or via redirect
+    else:
+        return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
