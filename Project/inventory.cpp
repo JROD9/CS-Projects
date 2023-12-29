@@ -13,12 +13,12 @@ int main()
 
     for (int i = 0; i < numSalsas; ++i) {
         do {
-            std::cout << "Enter number of fruit sold for " << salsaNames[i] << ": ";
+            std::cout << "Enter number of fruits sold for " << salsaNames[i] << ": ";
             std::cin >> fruitsold[i];
 
 
             if (fruitsold[i] < 0) {
-                std::cout << "Please enter a non-negative value for fruit sold." << std::endl;
+                std::cout << "Please enter a non-negative value for fruits sold." << std::endl;
             }
         } while (fruitsold[i] < 0);
     }
@@ -43,13 +43,13 @@ int main()
     std::cout << "\nSales Report\n";
     std::cout << "-----------------\n";
     for (int i = 0; i < numSalsas; ++i) {
-        std::cout << salsaNames[i] << ": " << fruitsold[i] << " fruit\n";
+        std::cout << salsaNames[i] << ": " << fruitsold[i] << " fruits\n";
     }
 
     std::cout << "-----------------\n";
-    std::cout << "Total Sales: " << totalSales << " fruit\n";
-    std::cout << "Highest Selling Product: " << salsaNames[highestIndex] << " (" << fruitsold[highestIndex] << " fruit)\n";
-    std::cout << "Lowest Selling Product: " << salsaNames[lowestIndex] << " (" << fruitsold[lowestIndex] << " fruit)\n";
+    std::cout << "Total Sales: " << totalSales << " fruits\n";
+    std::cout << "Highest Selling Product: " << salsaNames[highestIndex] << " (" << fruitsold[highestIndex] << " fruits)\n";
+    std::cout << "Lowest Selling Product: " << salsaNames[lowestIndex] << " (" << fruitsold[lowestIndex] << " fruits)\n";
 
     return 0;
 }
