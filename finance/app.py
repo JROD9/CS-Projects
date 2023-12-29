@@ -243,4 +243,19 @@ def sell():
                 total_sale = shares * price
 
                 #update users table
+                db.execute("UPDATE users SET cash = cash + :total_sale WHERE id = :user_id",
+                           total_sale=total_sale, user_id=session["user_id"])
+
+                #add the sale to the history table
+                db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
+                           user_id=session["user_id"], symbool=symbol, shares=shares, price=price)
+
+                flash(f"sold {shares} shares of {symbol} for {usd(total_sale)}!")
+                return redirect("/")
+
+        return apology("symbol not found")
+
+    #if the user visits the page
+    else:
+        return render_template("sell.html", stocks=stocks)
 
