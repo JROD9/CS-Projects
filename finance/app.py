@@ -47,7 +47,7 @@ def index():
     grand_total = cash
 
     #iterate over stocks and add price and tot value
-    
+    for stock in stocks:
 
 
 @app.route("/buy", methods=["GET", "POST"])
